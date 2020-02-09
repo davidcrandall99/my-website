@@ -1,6 +1,6 @@
 # my-website
 
-> The code for my website
+> The code for my website. It's a work in progress.
 
 ## Build Setup
 
@@ -20,3 +20,10 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+# IMMEDIATE TO DO's
+
+- Theming/UI
+- Blog listing page
+- Homepage
+- Add static routes dynamically to nuxt.config.js
