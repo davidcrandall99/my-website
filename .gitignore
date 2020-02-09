@@ -89,3 +89,6 @@ sw.*
 # Vim swap files
 *.swp
 .vscode
+
+#this file is generated on the fly
+assets/manifest.js
