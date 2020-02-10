@@ -1,7 +1,5 @@
 version: 0.2
 env:
-  parameter-store:
-    
   exported-variables:
     - S3_BUCKET
 phases:
