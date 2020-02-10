@@ -10,8 +10,8 @@ phases:
      - npm test
   build:
     commands:
-      - npm run generate
-      - cd .nuxt
+      - npm run build
+      - cd dist
   post_build:
     commands:
       - aws s3 sync . $S3_BUCKET
