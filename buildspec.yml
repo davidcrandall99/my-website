@@ -14,4 +14,4 @@ phases:
       - cd .nuxt
   post_build:
     commands:
-      - aws s3 sync ./ $S3_BUCKET
+      - aws s3 sync . $S3_BUCKET
