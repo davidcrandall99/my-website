@@ -9,8 +9,8 @@ phases:
       - pip install --upgrade awscli
   pre_build:
     commands:
-		- npm install --fix
-		- npm test
+	   - npm install --fix
+	   - npm test
   build:
     commands:
       - npm run generate
