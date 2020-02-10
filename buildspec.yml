@@ -3,7 +3,6 @@ version: 0.2
 phases:
   install: 
     commands:
-      - echo ${S3_BUCKET}
       - npm i npm@latest -g
   pre_build:
     commands:
@@ -13,5 +12,6 @@ phases:
     commands:
       - npm run build
 artifacts:
+  discard-paths: yes
   files:
-    - ./dist
+    - dist/*
