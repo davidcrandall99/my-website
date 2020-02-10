@@ -12,7 +12,6 @@ phases:
     commands:
       - npm run build
 artifacts:
-  discard-paths: yes
   files:
-    - dist/*
-    - dist/**/*
+    -  'dist/**/*'
+  discard-paths: yes
