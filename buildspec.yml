@@ -1,13 +1,16 @@
 version: 0.2
 env:
-  variables:
-    S3_BUCKET: ${S3_BUCKET}
+  parameter-store:
+    
+  exported-variables:
+    - S3_BUCKET
 phases:
   install: 
     commands:
       - npm i npm@latest -g
   pre_build:
     commands:
+     - echo $S3_BUCKET
      - npm install --fix
      - npm test
   build:
@@ -16,4 +19,4 @@ phases:
       - cd dist
   post_build:
     commands:
-      - aws s3 sync . ${S3_BUCKET}
+      - aws s3 sync ./ ${S3_BUCKET}
