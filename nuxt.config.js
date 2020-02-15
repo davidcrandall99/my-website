@@ -1,6 +1,20 @@
 import FMMode from 'frontmatter-markdown-loader/mode'
 import path from 'path'
-import manifest from './utils/manifest';
+import manifestGenerator from './utils/manifest';
+
+//generate the blog post data before anything else
+manifestGenerator();
+
+
+//Once the data is available, generate the array of static routes we'll want in our build, dynanically
+import {manifest} from './assets/manifest.js';
+let urls = [];
+for(var i = 0; i in manifest; i++) {
+  urls.push('blog/' + manifest[i].url);
+}
+
+
+//now the nuxt config can begin
 export default {
   mode: 'spa',
   /*
@@ -57,10 +71,13 @@ export default {
   /*
   ** Build configuration
   */
+ generate: {
+  routes: urls
+ },
  build: {
   extend (config, _ctx) {
     //update manifest, only works on server build
-    manifest();
+    manifestGenerator();
     config.module.rules.push(
       {
         test: /\.md$/,
