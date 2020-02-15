@@ -3,15 +3,12 @@ phases:
   install: 
     commands:
       - npm i npm@latest -g
-      - npm install --fix
-      - npm test
   pre_build:
     commands:
      - npm install --fix
      - npm test
   build:
     commands:
-      - npm test
       - npm run build
 artifacts:
   files:
