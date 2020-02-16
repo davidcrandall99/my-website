@@ -1,19 +1,24 @@
 <template>
   <div>
-    <div
-      id="hero"
-    >
-	 	<div :style="
+    <div id="hero">
+      <div
+        :style="
         `background-image:url(${backgroundImg}); 
         background-color: ${backgroundColor};`
-      " id="bg"></div>
+      "
+        id="bg"
+      ></div>
       <div class="cover">
         <b-container>
           <b-row>
             <b-col>
               <h1 v-html="title">David Crandall</h1>
               <p v-html="subtitle">i drink, and i make things</p>
-				  <b-button variant="primary" href="https://www.linkedin.com/in/david-crandall-a3235033/" target="_blank">Connect on LinkedIn</b-button>
+              <b-button
+                variant="primary"
+                href="https://www.linkedin.com/in/david-crandall-a3235033/"
+                target="_blank"
+              >Connect on LinkedIn</b-button>
             </b-col>
           </b-row>
         </b-container>
@@ -43,12 +48,17 @@ export default {
   background-color: black;
   position: relative;
   #bg {
-  		filter: grayscale(100%);
-	  	background: black;
-		background-size: cover;
-		background-position: right top;
-		background-repeat: no-repeat;
-		background-color: black;
+    filter: grayscale(100%);
+    background: black;
+    background-size: cover;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
   h1 {
     text-transform: lowercase;
@@ -69,8 +79,8 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
   }
 }
 </style>
