@@ -37,6 +37,7 @@
               <b-list-group-item variant="success">VueJS</b-list-group-item>
               <b-list-group-item>TypeScript</b-list-group-item>
               <b-list-group-item variant="success">AWS</b-list-group-item>
+              <b-list-group-item variant="success">CI/CD</b-list-group-item>
               <b-list-group-item variant="success">ExpressJS</b-list-group-item>
               <b-list-group-item>Electron</b-list-group-item>
               <b-list-group-item variant="success">ES6</b-list-group-item>
