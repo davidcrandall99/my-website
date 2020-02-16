@@ -57,7 +57,7 @@
             </p>
             <p>These are just <em>some</em> of the things I've worked with.</p>
             <hr class="border-light"/>
-            <p>This website alone uses the highlighted technologies. Be sure to checkout the <a href="https://github.com/davidcrandall99/my-website" target="_blank" rel="nofollow">github repo</a> to see how it all works.</p>
+            <p>This website alone uses the highlighted technologies. Be sure to checkout the <a href="https://github.com/davidcrandall99/my-website" target="_blank" rel="noopener">github repo</a> to see how it all works.</p>
           </b-col>
         </b-row>
       </b-container>
