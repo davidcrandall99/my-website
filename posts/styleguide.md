@@ -1,11 +1,11 @@
 ---
-title: "My blog post"
+title: "Markdown Styleguide"
 date: 01/01/2020
 ---
 
 ---
 
-**Advertisement :)**
+**Advertisement examples :)**
 
 - **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image
   resize in browser.
