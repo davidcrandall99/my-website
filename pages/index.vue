@@ -11,7 +11,7 @@
     <section class="text-section bg-black text-white">
       <b-container>
         <b-row>
-          <b-col cols="8" offset="2" align-self="center">
+          <b-col md="8" xs="12" offset-md="2" offset-xs="0" align-self="center">
             <h2>well hello there</h2>
             <p>
               My name is David Crandall, and I am a software engineer, web
@@ -32,7 +32,7 @@
     <section class="bg-dark text-light text-section">
       <b-container>
         <b-row>
-          <b-col cols="4" offset="2">
+          <b-col md="4" xs="12" offset-md="2" offset-xs="0">
             <b-list-group class="text-dark">
               <b-list-group-item>React</b-list-group-item>
               <b-list-group-item variant="success">VueJS</b-list-group-item>
@@ -48,7 +48,7 @@
               <b-list-group-item>More and more every day...</b-list-group-item>
             </b-list-group>
           </b-col>
-          <b-col align-self="center" cols="6">
+          <b-col align-self="center" md="6" xs="12">
             <h2>my stack</h2>
             <p>
               I have worked with many technologies, applications, frameworks,
