@@ -20,8 +20,7 @@
               don't care about.
             </p>
             <p>
-              Just so ya know, this site is actively under construction. To
-              report a bug, <span class="text-danger">don't</span>.
+              Just so ya know, this site is actively under construction. <a href="https://github.com/davidcrandall99/my-website/issues" target="_blank" rel="noopener">Click here</a> to report any bugs or issues you may have on Github.
             </p>
           </b-col>
         </b-row>
