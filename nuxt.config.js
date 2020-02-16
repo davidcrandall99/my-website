@@ -1,6 +1,6 @@
 import FMMode from 'frontmatter-markdown-loader/mode'
 import path from 'path'
-import manifestGenerator from './utils/manifest';
+import manifestGenerator from './plugins/manifest';
 
 //generate the blog post data before anything else
 manifestGenerator();
@@ -39,12 +39,12 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/global.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    
   ],
   /*
   ** Nuxt.js dev-modules
@@ -61,7 +61,12 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '~/plugins/manifest'
   ],
+  bootstrapVue: {
+    bootstrapCSS: false,
+    bootstrapVueCSS: false
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -82,7 +87,7 @@ export default {
       {
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
-        include: path.resolve(__dirname, 'posts'),
+        include: path.resolve(__dirname),
         options: {
           mode: [FMMode.VUE_COMPONENT],
           vue: {

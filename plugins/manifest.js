@@ -1,6 +1,8 @@
 const fs = require("fs");
 var path = require('path');
 var appDir = path.dirname(require.main.filename);
+
+
 console.log(__dirname);
 
 let writeManifest = () => {
@@ -16,17 +18,18 @@ let writeManifest = () => {
 	}
 
 	getPosts().then(data => {
-
 		// creates output like
 		// { '0': 'post.md', '1': 'post2.md' }
-
 		let output = {};
 		for (var i = 0; i in data; i++) {
+			// let stuff = require('../posts/' + data[i]).toString()
+			console.log('./posts/' + data[i]);
 			output[i] = data[i]
 		}
 		return output;
 
 	}).then(data => {
+
 		/* 
 		creates an object like:
 		 { '0': { url: 'post' }, '1': { url: 'post2' } }

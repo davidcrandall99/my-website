@@ -1,0 +1,8 @@
+//theme overrides
+$dark: #101012;
+html, body {
+    overflow-x: hidden;
+}
+// Include Bootstrap and BootstrapVue SCSS files
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss'
