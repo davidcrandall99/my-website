@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "node utils/manifest && nuxt build",
+    "build": "node plugins/manifest && nuxt build",
     "start": "nuxt start",
-    "generate": "node utils/manifest.js && nuxt generate",
+    "generate": "node plugins/manifest.js && nuxt generate",
     "test": "jest"
   },
   "dependencies": {
