@@ -1,18 +1,89 @@
 <template>
   <div>
-    <Hero />
+    <Hero
+      title="David Crandall"
+      subtitle="i drink and i make things"
+      backgroundImg="/images/side-pic.jpg"
+      backgroundColor="black"
+    />
+
+    <!--Intro section -->
+    <section class="text-section bg-black text-white">
+      <b-container>
+        <b-row>
+          <b-col cols="8" offset="2" align-self="center">
+            <h2>well hello there</h2>
+            <p>
+              My name is David Crandall, and I am a software engineer, web
+              developer, engineering manager, photographer, drummer, bassist,
+              anime fan, film lover, and a whole bunch of things you probably
+              don't care about.
+            </p>
+            <p>
+              Just so ya know, this site is actively under construction. To
+              report a bug, <span class="text-danger">don't</span>.
+            </p>
+          </b-col>
+        </b-row>
+      </b-container>
+    </section>
+
+    <!-- tech stack -->
+    <section class="bg-dark text-light text-section">
+      <b-container>
+        <b-row>
+          <b-col cols="4" offset="2">
+            <b-list-group class="text-dark">
+              <b-list-group-item>React</b-list-group-item>
+              <b-list-group-item variant="success">VueJS</b-list-group-item>
+              <b-list-group-item>TypeScript</b-list-group-item>
+              <b-list-group-item variant="success">AWS</b-list-group-item>
+              <b-list-group-item variant="success">ExpressJS</b-list-group-item>
+              <b-list-group-item>Electron</b-list-group-item>
+              <b-list-group-item variant="success">ES6</b-list-group-item>
+              <b-list-group-item variant="success">SASS/SCSS/CSS</b-list-group-item>
+              <b-list-group-item>Serverless</b-list-group-item>
+              <b-list-group-item>PHP gets no luv :(</b-list-group-item>
+              <b-list-group-item variant="success">Jest</b-list-group-item>
+              <b-list-group-item>More and more every day...</b-list-group-item>
+            </b-list-group>
+          </b-col>
+          <b-col align-self="center" cols="6">
+            <h2>my stack</h2>
+            <p>
+              I have worked with many technologies, applications, frameworks,
+              and architectures. Every day, I make it a point to learn something
+              new.
+            </p>
+            <p>These are just <em>some</em> of the things I've worked with.</p>
+            <hr class="border-light"/>
+            <p>This website alone uses the highlighted technologies. Be sure to checkout the <a href="https://github.com/davidcrandall99/my-website" target="_blank" rel="nofollow">github repo</a> to see how it all works.</p>
+          </b-col>
+        </b-row>
+      </b-container>
+    </section>
   </div>
 </template>
 
 <script>
-import Hero from '~/components/Hero.vue';
-
+import Hero from "~/components/Hero.vue";
+import RecentPosts from "~/components/RecentPosts";
 export default {
   components: {
-    Hero
+    Hero,
+    RecentPosts
   }
 };
 </script>
 
 <style lang="scss" scoped>
+section {
+  padding: 40px 0;
+  &.text-section {
+    padding: 80px 0;
+  }
+  &.bg-black {
+    background-color: #010101;
+  }
+}
 </style>

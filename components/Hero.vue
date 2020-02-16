@@ -1,16 +1,30 @@
 <template>
   <div>
-    <div id="hero">
-      <h1>David Crandall</h1>
-      <p>i drink, and i make things</p>
+    <div
+      id="hero"
+      :style="
+        `background-image:url(${backgroundImg}); 
+        background-color: ${backgroundColor};`
+      "
+    >
+      <div class="cover">
+        <b-container>
+          <b-row>
+            <b-col>
+              <h1 v-html="title">David Crandall</h1>
+              <p v-html="subtitle">i drink, and i make things</p>
+            </b-col>
+          </b-row>
+        </b-container>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-	export default {
-		
-	}
+export default {
+  props: ["title", "backgroundImg", "backgroundColor", "subtitle"]
+};
 </script>
 
 <style lang="scss" scoped>
@@ -21,19 +35,34 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color: black;
+  position: relative;
+  filter: grayscale(100%);
   h1 {
     text-transform: lowercase;
     color: white;
-    text-align: center;
-    font-weight: 200;
     letter-spacing: 0.5px;
     max-width: 50%;
-    flex:none;
+    flex: none;
   }
   p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .cover {
+    background: rgba(0, 0, 0, 0.4);
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left:0;
+    top:0;
   }
 }
 </style>
