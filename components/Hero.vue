@@ -2,17 +2,18 @@
   <div>
     <div
       id="hero"
-      :style="
+    >
+	 	<div :style="
         `background-image:url(${backgroundImg}); 
         background-color: ${backgroundColor};`
-      "
-    >
+      " id="bg"></div>
       <div class="cover">
         <b-container>
           <b-row>
             <b-col>
               <h1 v-html="title">David Crandall</h1>
               <p v-html="subtitle">i drink, and i make things</p>
+				  <b-button variant="primary" href="https://www.linkedin.com/in/david-crandall-a3235033/" target="_blank">Connect on LinkedIn</b-button>
             </b-col>
           </b-row>
         </b-container>
@@ -41,7 +42,14 @@ export default {
   background-repeat: no-repeat;
   background-color: black;
   position: relative;
-  filter: grayscale(100%);
+  #bg {
+  		filter: grayscale(100%);
+	  	background: black;
+		background-size: cover;
+		background-position: right top;
+		background-repeat: no-repeat;
+		background-color: black;
+  }
   h1 {
     text-transform: lowercase;
     color: white;
