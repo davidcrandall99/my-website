@@ -35,8 +35,11 @@
     <section>
       <b-container>
         <b-row>
-          <RecentPosts />
+          <b-col cols="12" class="text-center">
+            <h2>Recent posts</h2>
+          </b-col>
         </b-row>
+        <RecentPosts />
       </b-container>
     </section>
     <!-- tech stack -->
