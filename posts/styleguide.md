@@ -1,6 +1,7 @@
 ---
 title: "Markdown Styleguide"
 date: 01/01/2020
+summary: "Just a simple blog post showing the conversion of markdown files to vue components"
 ---
 
 ---

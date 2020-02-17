@@ -1,25 +1,33 @@
 <template>
-  <div>
-    <h1>Recent Posts</h1>
-    {{ uris[0] }}
+  <div id="posts">
+    <b-row>
+      <b-col :key="index" v-for="(item, index) in manifest" cols="12" sm="6" md="4">
+        <nuxt-link :to="item.uri" class="text-dark">
+          <b-card :title="item.meta.data.title" tag="article">
+            <p>{{ item.meta.data.summary }}</p>
+          </b-card>
+        </nuxt-link>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
 <script>
 import { manifest } from "@/assets/manifest.js";
-let postURI = [];
-for (var i = 0; i in manifest; i++) {
-  let num = i.toString;
-  postURI.push(`/blog/${manifest[i].url}`);
-}
 
 export default {
-    data() {
-        return {
-            uris: postURI
-        }
-    }
+  data() {
+    return {
+      manifest: manifest
+    };
+  }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+#posts {
+  padding: 40px 0;
+}
+
+</style>

@@ -1,8 +1,1 @@
-export const manifest = {
-			"0" : {
-				'url': 'styleguide'
-			},
-			"1" : {
-				'url': 'what-is-seo-value'
-			}
-};
+export const manifest = {"0":{"uri":"/blog/new-website","meta":{"data":{"title":"My new website","date":"02/17/2020","summary":"I recently decided to rebuild my website using Nuxt, and I'm thrilled with the setup"},"isEmpty":false,"excerpt":""}},"1":{"uri":"/blog/styleguide","meta":{"data":{"title":"Markdown Styleguide","date":"01/01/2020","summary":"Just a simple blog post showing the conversion of markdown files to vue components"},"isEmpty":false,"excerpt":""}},"2":{"uri":"/blog/what-is-seo-value","meta":{"data":{"title":"What does \"SEO Value\" even mean?","date":"08/08/2015","summary":"What exactly is \"SEO Value\"? How can I use SEO to increase traffic to my website? It's simpler than you might think."},"isEmpty":false,"excerpt":""}}}

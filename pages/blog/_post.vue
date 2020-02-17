@@ -1,15 +1,30 @@
 <template>
   <div>
     <section class="bg-dark hero text-light">
+      <vue-particles 
+      class="particles" 
+      color="#dddddd"
+      :particlesNumber="100"
+      :particle-opacity="0.5"
+      shapeType="polygon"
+      :lineLinked="true"
+      :line-opacity="0.2"
+      linesColor="#a3a3a3"
+      :particleSize="1"
+      :moveSpeed="2"
+      hovermode="repulse"
+
+      ></vue-particles>
       <b-container>
         <b-row>
-          <b-col>
+          <b-col class="meta">
             <h1 :if="attributes.title">{{ attributes.title }}</h1>
             <p>
               <span :if="attributes.date">Published {{ attributes.date }}</span>
               <br :if="attributes.date" />
               Author: David Crandall
             </p>
+            <nuxt-link to="/"><b-button variant="primary">Back home</b-button></nuxt-link>
             <hr />
           </b-col>
         </b-row>
@@ -32,8 +47,9 @@ import { manifest } from "@/assets/manifest.js";
 let data = [];
 for (var i = 0; i in manifest; i++) {
   let num = i.toString;
-  data.push(manifest[i].url);
+  data.push(manifest[i].uri.split('/blog/')[1]);
 }
+console.log(data);
 export default {
   validate({ params }) {
     /*
@@ -72,10 +88,21 @@ export default {
   .hero {
     padding: 40px 0;
     margin-bottom:40px;
+    position: relative;
   }
   #post {
     img {
       max-width: 100%;
     }
   }
+  .particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.meta a {
+  z-index: 99;
+  position: relative;
+}
 </style>
