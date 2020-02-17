@@ -1,7 +1,7 @@
 <template>
   <div id="posts">
     <b-row>
-      <b-col :key="index" v-for="(item, index) in manifest">
+      <b-col :key="index" v-for="(item, index) in manifest" cols="12" sm="6" md="4">
         <nuxt-link :to="item.uri" class="text-dark">
           <b-card :title="item.meta.data.title" tag="article">
             <p>{{ item.meta.data.summary }}</p>
