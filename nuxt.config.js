@@ -2,6 +2,7 @@ import FMMode from 'frontmatter-markdown-loader/mode'
 import path from 'path'
 import manifestGenerator from './plugins/manifest';
 
+
 //generate the blog post data before anything else
 manifestGenerator();
 
@@ -45,6 +46,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/registerComponents.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -61,7 +63,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '~/plugins/manifest'
+    '~/plugins/manifest',
   ],
   bootstrapVue: {
     bootstrapCSS: false,
