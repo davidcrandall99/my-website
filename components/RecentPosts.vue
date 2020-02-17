@@ -3,6 +3,7 @@
     <h1>Recent Posts</h1>
     <div :key="index" v-for="(item, index) in manifest">
     <nuxt-link :to="item.uri">{{ item.meta.data.title }}</nuxt-link>
+    <p>{{ item.meta.data.summary }}</p>
     </div>
   </div>
 </template>

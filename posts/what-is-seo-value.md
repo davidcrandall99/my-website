@@ -1,6 +1,7 @@
 ---
 title: 'What does "SEO Value" even mean?'
 date: 08/08/2015
+summary: "What exactly is \"SEO Value\"? How can I use SEO to increase traffic to my website? It's simpler than you might think."
 ---
 ## What is SEO value?
 
