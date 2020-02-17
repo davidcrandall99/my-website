@@ -32,8 +32,9 @@ import { manifest } from "@/assets/manifest.js";
 let data = [];
 for (var i = 0; i in manifest; i++) {
   let num = i.toString;
-  data.push(manifest[i].url);
+  data.push(manifest[i].uri.split('/blog/')[1]);
 }
+console.log(data);
 export default {
   validate({ params }) {
     /*

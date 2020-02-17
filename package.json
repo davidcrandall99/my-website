@@ -5,7 +5,7 @@
   "author": "David Crandall",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "node plugins/manifest.js && nuxt",
     "build": "node plugins/manifest && nuxt build",
     "start": "nuxt start",
     "generate": "node plugins/manifest.js && nuxt generate",

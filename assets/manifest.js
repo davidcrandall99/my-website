@@ -1,8 +1,1 @@
-export const manifest = {
-			"0" : {
-				'url': 'styleguide'
-			},
-			"1" : {
-				'url': 'what-is-seo-value'
-			}
-};
+export const manifest = {"0":{"uri":"/blog/styleguide","meta":{"data":{"title":"Markdown Styleguide","date":"01/01/2020"},"isEmpty":false,"excerpt":""}},"1":{"uri":"/blog/what-is-seo-value","meta":{"data":{"title":"What does \"SEO Value\" even mean?","date":"08/08/2015"},"isEmpty":false,"excerpt":""}}}
