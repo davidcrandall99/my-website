@@ -1,5 +1,16 @@
 <template>
   <div>
+    <vue-particles 
+      class="particles" 
+      color="#dddddd"
+      :particlesNumber="100"
+      shapeType="polygon"
+      :lineLinked="true"
+      linesColor="#a3a3a3"
+      :particleSize="1"
+      hovermode="repulse"
+
+      ></vue-particles>
     <div id="hero">
       <div
         :style="
@@ -8,8 +19,8 @@
       "
         id="bg"
       ></div>
-      <div class="cover">
-        <b-container>
+      <div class="cover"></div>
+      <b-container class="content">
           <b-row>
             <b-col>
               <h1 v-html="title">David Crandall</h1>
@@ -22,7 +33,6 @@
             </b-col>
           </b-row>
         </b-container>
-      </div>
     </div>
   </div>
 </template>
@@ -59,6 +69,7 @@ export default {
     top: 0;
     width: 100%;
     height: 100%;
+    z-index:0;
   }
   h1 {
     text-transform: lowercase;
@@ -71,7 +82,7 @@ export default {
     color: rgba(255, 255, 255, 0.8);
   }
   .cover {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     display: block;
     position: absolute;
     width: 100%;
@@ -81,6 +92,16 @@ export default {
     justify-content: center;
     left: 0;
     top: 0;
+    z-index:1;
   }
+}
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.content {
+  z-index: 3;
 }
 </style>

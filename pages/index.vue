@@ -20,7 +20,14 @@
               don't care about.
             </p>
             <p>
-              Just so ya know, this site is actively under construction. <a href="https://github.com/davidcrandall99/my-website/issues" target="_blank" rel="noopener">Click here</a> to report any bugs or issues you may have on Github.
+              Just so ya know, this site is actively under construction.
+              <a
+                href="https://github.com/davidcrandall99/my-website/issues"
+                target="_blank"
+                rel="noopener"
+                >Click here</a
+              >
+              to report any bugs or issues you may have on Github.
             </p>
           </b-col>
         </b-row>
@@ -41,7 +48,9 @@
               <b-list-group-item variant="success">ExpressJS</b-list-group-item>
               <b-list-group-item>Electron</b-list-group-item>
               <b-list-group-item variant="success">ES6</b-list-group-item>
-              <b-list-group-item variant="success">SASS/SCSS/CSS</b-list-group-item>
+              <b-list-group-item variant="success"
+                >SASS/SCSS/CSS</b-list-group-item
+              >
               <b-list-group-item>Serverless</b-list-group-item>
               <b-list-group-item>PHP gets no luv :(</b-list-group-item>
               <b-list-group-item variant="success">Jest</b-list-group-item>
@@ -56,8 +65,18 @@
               new.
             </p>
             <p>These are just <em>some</em> of the things I've worked with.</p>
-            <hr class="border-light"/>
-            <p>This website alone uses the highlighted technologies. Be sure to checkout the <a href="https://github.com/davidcrandall99/my-website" target="_blank" rel="noopener">github repo</a> to see how it all works.</p>
+            <hr class="border-light" />
+            <p>
+              This website alone uses the highlighted technologies. Be sure to
+              checkout the
+              <a
+                href="https://github.com/davidcrandall99/my-website"
+                target="_blank"
+                rel="noopener"
+                >github repo</a
+              >
+              to see how it all works.
+            </p>
           </b-col>
         </b-row>
       </b-container>
@@ -78,6 +97,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
+  position: relative;
   padding: 40px 0;
   &.text-section {
     padding: 80px 0;
