@@ -1,7 +1,7 @@
 <template>
   <div>
-    <vue-particles 
-      class="particles" 
+    <vue-particles
+      class="particles"
       color="#dddddd"
       :particlesNumber="100"
       :particle-opacity="0.5"
@@ -12,8 +12,10 @@
       :particleSize="1"
       :moveSpeed="2"
       hovermode="repulse"
+      
 
-      ></vue-particles>
+      >
+      </vue-particles>
     <div id="hero">
       <div
         :style="
@@ -26,13 +28,13 @@
       <b-container class="content">
           <b-row>
             <b-col>
-              <h1 v-html="title">David Crandall</h1>
-              <p v-html="subtitle">i drink, and i make things</p>
-              <b-button
-                variant="primary"
-                href="https://www.linkedin.com/in/david-crandall-a3235033/"
-                target="_blank"
-              >Connect on LinkedIn</b-button>
+              <h1 :if="title" v-html="title"></h1>
+              <p :if="subtitle" v-html="subtitle"></p>
+              <b-button :if="cta"
+                :variant="ctavariant"
+                :href="ctaurl"
+                :target="ctatarget"
+              >{{cta}}</b-button>
             </b-col>
           </b-row>
         </b-container>
@@ -42,7 +44,7 @@
 
 <script>
 export default {
-  props: ["title", "backgroundImg", "backgroundColor", "subtitle"]
+  props: ["title", "backgroundImg", "backgroundColor", "subtitle", "cta", "ctaurl","ctatarget","ctavariant"]
 };
 </script>
 
@@ -99,12 +101,15 @@ export default {
   }
 }
 .particles {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: 2;
 }
 .content {
   z-index: 3;
+}
+section * {
+  z-index: 99;
 }
 </style>

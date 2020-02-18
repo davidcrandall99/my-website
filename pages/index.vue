@@ -2,13 +2,17 @@
   <div>
     <Hero
       title="David Crandall"
-      subtitle="i drink and i make things"
+      subtitle="i drink and i make things work"
       backgroundImg="/images/side-pic.jpg"
       backgroundColor="black"
+      cta="Connect On LinkedIn"
+      ctaurl="https://www.linkedin.com/in/david-crandall-a3235033/"
+      ctatarget="_blank"
+      ctavariant="primary"
     />
 
     <!--Intro section -->
-    <section class="text-section bg-black text-white">
+    <section id="intro" class="text-section bg-black text-white">
       <b-container>
         <b-row>
           <b-col md="8" xs="12" offset-md="2" offset-xs="0" align-self="center">
@@ -32,8 +36,8 @@
         </b-row>
       </b-container>
     </section>
-    <section>
-      <b-container>
+    <section id="posts">
+      <b-container fluid>
         <b-row>
           <b-col cols="12" class="text-center">
             <h2>Recent posts</h2>
@@ -42,8 +46,15 @@
         <RecentPosts />
       </b-container>
     </section>
+
+    <section id="tech" class="bg-dark text-light text-section">
+      <b-container >
+        <TechLogos />
+      </b-container>
+    </section>
+
     <!-- tech stack -->
-    <section class="bg-dark text-light text-section">
+    <!-- <section class="bg-dark text-light text-section">
       <b-container>
         <b-row>
           <b-col md="4" xs="12" offset-md="2" offset-xs="0">
@@ -88,17 +99,19 @@
           </b-col>
         </b-row>
       </b-container>
-    </section>
+    </section> -->
   </div>
 </template>
 
 <script>
 import Hero from "~/components/Hero.vue";
 import RecentPosts from "~/components/RecentPosts";
+import TechLogos from "~/components/TechLogos";
 export default {
   components: {
     Hero,
-    RecentPosts
+    RecentPosts,
+    TechLogos
   }
 };
 </script>
@@ -113,5 +126,17 @@ section {
   &.bg-black {
     background-color: #010101;
   }
+}
+#tech {
+  * {
+    z-index: 99;
+  }
+}
+#posts {
+  z-index: 99;
+  background: white;
+}
+#intro {
+  z-index: 99;
 }
 </style>
