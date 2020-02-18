@@ -6,9 +6,9 @@
 				<hr class="white" />
 			</b-col>
 		</b-row>
-		<b-row class="text-center d-flex justify-content-center">
-			<b-col cols="2" align-self="center" :key="i.name" v-for="i in images">
-				<b-img-lazy fluid-grow :src="'/images/logos/' + i.name" class="bg-dark borderless"></b-img-lazy>
+		<b-row class="text-center d-flex justify-content-center column">
+			<b-col xs="12" sm="4" md="2"  align-self="center" :key="i.name" v-for="i in images">
+				<b-img-lazy fluid-grow :src="'/images/logos/' + i.name" class="img bg-dark borderless"></b-img-lazy>
 				<p>{{ i.alt }}</p>
 			</b-col>
 			<b-col cols="2" align-self="center">
@@ -86,5 +86,14 @@
 </script>
 
 <style lang="scss" scoped>
-
+.img {
+ margin-bottom: 10px;
+}
+.column {
+	margin-bottom: 20px;
+	padding: 40px;
+	p {
+		margin-bottom: 40px;
+	}
+}
 </style>

@@ -47,7 +47,7 @@
       </b-container>
     </section>
 
-    <section id="tech" class="bg-dark text-light">
+    <section id="tech" class="bg-dark text-light text-section">
       <b-container >
         <TechLogos />
       </b-container>
