@@ -29,6 +29,11 @@ export default {
         content: "My name is David Crandall - and I make things."
       },
       { name: 'keywords', content: 'david crandall, david gene crandall, dave crandall, david crandall photography, david crandall blog, tech blog'},
+      { hid: 'title', name: 'og:title', content: 'David Crandall' },
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'David Crandall'},
+      { name: 'og:description', content: 'My name is David. I make things.' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:site_name', hid: 'og:site_name', content: 'David Crandall'}
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
