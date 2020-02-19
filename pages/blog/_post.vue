@@ -94,6 +94,7 @@ export default {
     img {
       max-width: 100%;
     }
+    padding-bottom: 40px;
   }
   .particles {
   position: absolute;

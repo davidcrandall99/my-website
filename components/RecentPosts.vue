@@ -1,13 +1,13 @@
 <template>
   <div id="posts">
-    <b-row>
-      <b-col :key="index" v-for="(item, index) in manifest" cols="12" sm="6" md="4">
-        <nuxt-link :to="item.uri" class="text-dark">
+    <b-row align-v="center">
+      <b-card-group columns>
+        <nuxt-link :key="index" v-for="(item, index) in manifest" :to="item.uri" class="text-dark">
           <b-card :title="item.meta.data.title" tag="article">
             <p>{{ item.meta.data.summary }}</p>
           </b-card>
         </nuxt-link>
-      </b-col>
+      </b-card-group>
     </b-row>
   </div>
 </template>

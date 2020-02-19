@@ -37,8 +37,8 @@
       </b-container>
     </section>
     <section id="posts">
-      <b-container fluid>
-        <b-row>
+      <b-container>
+        <b-row align-v="center">
           <b-col cols="12" class="text-center">
             <h2>Recent posts</h2>
           </b-col>
