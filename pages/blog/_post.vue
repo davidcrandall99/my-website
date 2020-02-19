@@ -96,6 +96,11 @@ export default {
     const markdown = require(`~/posts/${this.$route.params.post}.md`);
     this.attributes = markdown.attributes;
     this.selectedArticle = markdown.vue.component;
+  },
+  head() {
+    return {
+    title: `${this.attributes.title ? this.attributes.title + ' | ' : ''}David Crandall`
+    }
   }
 };
 </script>
