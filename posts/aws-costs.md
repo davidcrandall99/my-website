@@ -136,4 +136,15 @@ That brings me to my next, and probably final tip to save cost:
 
 AWS really is a one-stop-shop for all your cloud computing needs. It offers hundreds of services, tools, logging and monitoring features, premium support, etc. However, just because they offer it doesn't mean it will be the best or most cost efficient solution for you.
 
-For example, tools like [link to="https://sentry.io/welcome/"]Sentry[/link] or Log Rocket
+For example, tools like <a href="https://sentry.io/welcome/" target="_blank" rel="noopener">Sentry</a> or <a href="https://logrocket.com/" target="_blank" rel="noopener">Log Rocket</a> offer robust solutions for bug tracking and monitoring at fixed prices - starting at $0. AWS doesn't really offer much here, and what they do offer, you pay per log.
+
+Furhter, if you need a dedicated cloud database service, RDS isn't necessarily the cheapest or the fastest. Comparable services like Azure offer 12 months for free, while RDS offers 750 hours (and this is hours of compute time. In other words, if you rand 75 RDS instances, you could use up your free usage within 100 hours).
+
+At the end of the day, while it's nice to have all your cloud infrastructure in one place, it is absolutely ok to modularize and delegate tasks and services to multiple vendors to save on cost.
+
+**Just bear in mind the overhead of work/planning/configuration these things may entail**
+
+___
+Obviously, there are MANY other ways to save on cost, and it ultimately comes down to how you use the resources on your account against what your application requires.
+
+Review your bill, audit the most commonly used and expesive resources, and find creative ways to offset the cost using alternative services, infrastruture configs, automation, etc.
