@@ -24,13 +24,12 @@
               don't care about.
             </p>
             <p>
-              Just so ya know, this site is actively under construction.
-              <a
+              I'm constantly working and updating this website as I have time, and its entire codebase is <a href="https://github.com/davidcrandall99/my-website/" target="_blank" rel="noopener">available on Github.</a>
+              If you discover a bug, go ahead and <a
                 href="https://github.com/davidcrandall99/my-website/issues"
                 target="_blank"
                 rel="noopener"
-              >Click here</a>
-              to report any bugs or issues you may have on Github.
+              >let me know.</a>
             </p>
           </b-col>
         </b-row>
