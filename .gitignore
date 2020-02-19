@@ -92,3 +92,5 @@ sw.*
 
 #this file is generated on the fly
 assets/manifest.js
+
+package-lock.json
