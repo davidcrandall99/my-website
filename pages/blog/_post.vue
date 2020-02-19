@@ -39,6 +39,21 @@
         </b-row>
       </b-container>
     </section>
+    <section id="comments" class="bg-dark">
+      <b-container>
+        <b-row>
+          <b-col md="8" xs="12" offset-md="2" class="text-light">
+            <h2>Leave a comment</h2>
+            <hr class="border-primary"/>
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col md="8" xs="12" offset-md="2">
+            <vue-disqus shortname="davidcrandall" />
+          </b-col>
+        </b-row>
+      </b-container>
+    </section>
   </div>
 </template>
 
@@ -85,6 +100,7 @@ export default {
 };
 </script>
 <style lang="scss">
+
   .hero {
     padding: 40px 0;
     margin-bottom:40px;
@@ -107,5 +123,12 @@ export default {
 .meta a {
   z-index: 99;
   position: relative;
+}
+#comments {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  h2 {
+    margin-bottom: 20px;
+  }
 }
 </style>
