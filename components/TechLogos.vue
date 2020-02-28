@@ -60,7 +60,7 @@
 					alt: 'AWS'
 				},
 				{
-					name: 'creativecloud.jpg',
+					name: 'creativecloud.png',
 					alt: 'Creative Cloud'
 				},
 				{
