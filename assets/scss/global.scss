@@ -1,5 +1,6 @@
 //theme overrides
 $dark: #101012;
+$primary: #0051A8;
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 
 html, body {
@@ -12,6 +13,9 @@ h1, h2, h3, a {
 
 .title {
     padding-bottom: 20px;
+}
+.bg-black a {
+    color: #3898FF;
 }
 
 // Include Bootstrap and BootstrapVue SCSS files

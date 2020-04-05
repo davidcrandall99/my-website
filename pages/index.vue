@@ -3,7 +3,7 @@
     <Hero
       title="David Crandall"
       subtitle="i drink and i make things work"
-      backgroundImg="/images/side-pic.jpg"
+      backgroundImg="/images/side-pic.webp"
       backgroundColor="black"
       cta="Connect On LinkedIn"
       ctaurl="https://www.linkedin.com/in/david-crandall-a3235033/"
@@ -35,7 +35,7 @@
         </b-row>
       </b-container>
     </section>
-    <section id="posts">
+    <section id="posts-section">
       <b-container>
         <b-row align-v="center">
           <b-col cols="12" class="text-center">
@@ -131,7 +131,7 @@ section {
     z-index: 99;
   }
 }
-#posts {
+#posts-section {
   z-index: 99;
   background: white;
 }
