@@ -2,7 +2,7 @@
   <div id="posts">
     <b-row align-v="center">
       <b-card-group columns>
-        <nuxt-link :key="index" v-for="(item, index) in manifest" :to="item.uri" class="text-dark">
+        <nuxt-link :key="index" v-for="(item, index) in manifest" :to="item.uri" class="text-dark" :aria-label="item.meta.data.title">
           <b-card :title="item.meta.data.title" tag="article">
             <p>{{ item.meta.data.summary }}</p>
           </b-card>

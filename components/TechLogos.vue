@@ -8,7 +8,7 @@
 		</b-row>
 		<b-row class="text-center d-flex justify-content-center column">
 			<b-col xs="12" sm="4" md="2"  align-self="center" :key="i.name" v-for="i in images">
-				<b-img-lazy fluid-grow :src="'/images/logos/' + i.name" class="img bg-dark borderless"></b-img-lazy>
+				<b-img-lazy :alt="i.alt" fluid-grow :src="'/images/logos/' + i.name" class="img bg-dark borderless"></b-img-lazy>
 				<p>{{ i.alt }}</p>
 			</b-col>
 			<b-col cols="2" align-self="center">
