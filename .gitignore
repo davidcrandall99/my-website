@@ -98,3 +98,4 @@ package-lock.json
 #ignore the posts directory
 posts
 posts/*
+assets/manifest.js
