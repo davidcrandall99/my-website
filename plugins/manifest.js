@@ -13,7 +13,7 @@ let writeManifest = () => {
     try {
       await shell.mkdir(__dirname + "/../");
       await shell.cd(__dirname + "/../");
-      await shell.exec("git clone https://github.com/davidcrandall99/posts");
+      await shell.exec("git clone https://davidcrandall99@github.com/davidcrandall99/posts");
       return;
     } catch (e) {
       console.error(e);
