@@ -94,3 +94,8 @@ sw.*
 assets/manifest.js
 
 package-lock.json
+
+#ignore the posts directory
+posts
+posts/*
+assets/manifest.js

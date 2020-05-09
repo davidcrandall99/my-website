@@ -93,7 +93,7 @@ export default {
   },
 
   created() {
-    const markdown = require(`~/posts/${this.$route.params.post}.md`);
+    const markdown = require(`~/posts/posts/${this.$route.params.post}.md`);
     this.attributes = markdown.attributes;
     this.selectedArticle = markdown.vue.component;
   },
