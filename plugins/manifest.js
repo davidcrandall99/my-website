@@ -91,7 +91,6 @@ let writeManifest = () => {
           listPosition++;
           lists.push([listPosition]);
         }
-        console.log(i+1, data.length)
         if(i + 1 < data.length) {
           lists[listPosition].push([i - (listPosition * 10)])
         }
