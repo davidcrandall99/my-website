@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import { manifest } from "@/assets/manifest.js";
 import VueDisqus from 'vue-disqus';
 import VueParticles from 'vue-particles';
