@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue, RouterLinkStub } from '@vue/test-utils';
 import RecentPosts from '@/components/RecentPosts.vue'
 import BootstrapVue from 'bootstrap-vue'
 
@@ -14,7 +14,10 @@ describe('Recent Posts Component', () => {
   test('is a Vue instance', () => {
 
     //here, we mount the hero with the registered local vue instance, which includes BootstrapVue
-    const wrapper = mount(RecentPosts, { localVue });
+    const wrapper = shallowMount(RecentPosts, { localVue, stubs: {
+      NuxtLink: RouterLinkStub,
+      RecentPosts: RecentPosts
+    } });
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 })
