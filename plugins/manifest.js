@@ -11,9 +11,7 @@ let writeManifest = () => {
   //get the posts from github
   let gitPosts = async () => {
     try {
-      console.info('Removing existing posts, if they exist')
-      await shell.exec('rm -r ' + __dirname + '/../posts/');
-
+      
       console.info('Fetching posts from repo');
       await shell.cd(__dirname + "/../");
       await shell.exec(`git clone https://${process.env.USER}:${process.env.PASS}@${process.env.REPO}`);
