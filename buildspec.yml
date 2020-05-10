@@ -6,6 +6,7 @@ phases:
   pre_build:
     commands:
      - npm install --fix
+     - npm run generate
      - npm test
   build:
     commands:
