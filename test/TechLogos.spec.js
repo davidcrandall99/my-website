@@ -1,6 +1,7 @@
-import { shallowMount, createLocalVue, RouterLinkStub } from '@vue/test-utils';
-import Homepage from '@/pages/index.vue'
+import { mount, shallowMount, createLocalVue, RouterLinkStub } from '@vue/test-utils';
+import TechLogos from '@/components/TechLogos.vue'
 import BootstrapVue from 'bootstrap-vue'
+
 /*
   This component uses BootstrapVue components, which are registered globally.
   In order to avoid console errors for unknown components, we must register
@@ -9,13 +10,13 @@ import BootstrapVue from 'bootstrap-vue'
 const localVue = createLocalVue();
 localVue.use(BootstrapVue);
 
-describe('Homepage', () => {
+describe('TechLogos', () => {
   test('is a Vue instance', () => {
 
-    //here, we mount the hero with the registered local vue instance, which includes BootstrapVue
-    const wrapper = shallowMount(Homepage, { localVue,  stubs: {
-      NuxtLink: RouterLinkStub
-    } });
+    //here, we mount the component with the registered local vue instance, which includes BootstrapVue
+    const wrapper = mount(TechLogos, { localVue, stubs: {
+      NuxtLink: RouterLinkStub,
+    }});
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 })
