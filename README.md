@@ -22,7 +22,13 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 ## Environment Variables
-`PASS` -- the password or auth token for the github repo containing your posts. If the posts are public, this is not required. However, you will want to populate this variable if you want to store posts in a private repo.
+`PASS` -- the password or auth token for the github repo containing your posts. If the posts are public, this is not required. However, you will want to populate this variable if you want to store posts in a private or public repo. **You should generate a random token and not use your personal admin password here**
+
+`USER` -- The username of the gitub account that will access the posts repo
+
+`REPO` -- The URL of the repo **without https://**, i.e, `github.com/user/reponame`
+
+You will notice in the `.github/workflows/nodejs.yml`, these variables are appended using Github Secrets.
 
 ## How Posts Work
 This website takes advantage of a CI/CD pipeline, consisting of github actions and AWS code pipeline.
