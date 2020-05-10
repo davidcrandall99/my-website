@@ -2,9 +2,9 @@
   <div id="posts">
     <b-row align-v="center">
       <b-card-group columns>
-        <nuxt-link :key="index" v-for="(item, index) in manifest" :to="item.uri" class="text-dark" :aria-label="item.meta.data.title">
-          <b-card :title="item.meta.data.title" tag="article">
-            <p>{{ item.meta.data.summary }}</p>
+        <nuxt-link :key="index" v-for="(item, index) in manifest" :to="item.uri" class="text-dark" :aria-label="item.title">
+          <b-card :title="item.title" tag="article">
+            <p>{{ item.summary }}</p>
           </b-card>
         </nuxt-link>
       </b-card-group>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { manifest } from "@/assets/manifest.js";
+import { manifest } from "@/assets/manifest-0.js";
 
 export default {
   data() {
