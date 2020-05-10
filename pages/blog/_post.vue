@@ -59,6 +59,12 @@
 
 <script>
 import { manifest } from "@/assets/manifest.js";
+import VueDisqus from 'vue-disqus';
+import VueParticles from 'vue-particles';
+
+Vue.use(VueParticles);
+Vue.use(VueDisqus);
+
 let data = [];
 for (var i = 0; i in manifest; i++) {
   let num = i.toString;
