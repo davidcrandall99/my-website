@@ -16,7 +16,7 @@ let writeManifest = () => {
 
       console.info('Fetching posts from repo');
       await shell.cd(__dirname + "/../");
-      await shell.exec(`git clone https://${process.env.USER}:${process.env.PASS}@github.com/davidcrandall99/posts`);
+      await shell.exec(`git clone https://${process.env.USER}:${process.env.PASS}@${process.env.REPO}`);
 
       console.info('Moving images to Nuxt static directory');
       await shell.mkdir(__dirname + '/../static/images/posts/');
