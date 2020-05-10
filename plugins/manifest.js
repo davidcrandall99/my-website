@@ -11,9 +11,17 @@ let writeManifest = () => {
   //get the posts from github
   let gitPosts = async () => {
     try {
-      await shell.mkdir(__dirname + "/../");
+      console.info('Removing existing posts, if they exist')
+      await shell.exec('rm -r ' + __dirname + '/../posts/');
+
+      console.info('Fetching posts from repo');
       await shell.cd(__dirname + "/../");
-      await shell.exec(`git clone https://davidcrandall99:${process.env.PASS}@github.com/davidcrandall99/posts`);
+      await shell.exec(`git clone https://${process.env.USER}:${process.env.PASS}@github.com/davidcrandall99/posts`);
+
+      console.info('Moving images to Nuxt static directory');
+      await shell.mkdir(__dirname + '/../static/images/posts/');
+      await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');
+
       return;
     } catch (e) {
       console.error(e);
