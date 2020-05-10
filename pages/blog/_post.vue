@@ -58,13 +58,17 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import { manifest } from "@/assets/manifest.js";
+import VueDisqus from 'vue-disqus';
+Vue.use(VueDisqus);
+
 let data = [];
 for (var i = 0; i in manifest; i++) {
   let num = i.toString;
   data.push(manifest[i].uri.split('/blog/')[1]);
 }
-console.log(data);
+
 export default {
   validate({ params }) {
     /*

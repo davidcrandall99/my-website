@@ -99,3 +99,4 @@ package-lock.json
 posts
 posts/*
 assets/manifest.js
+manifest-*

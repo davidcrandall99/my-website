@@ -43,6 +43,7 @@
 </template>
 
 <script>
+
 export default {
   props: ["title", "backgroundImg", "backgroundColor", "subtitle", "cta", "ctaurl","ctatarget","ctavariant"]
 };
