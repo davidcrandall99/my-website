@@ -20,4 +20,14 @@ h1, h2, h3, a {
 
 // Include Bootstrap and BootstrapVue SCSS files
 @import '~bootstrap/scss/bootstrap.scss';
-@import '~bootstrap-vue/src/index.scss'
+@import '~bootstrap-vue/src/index.scss';
+
+// Page transitions
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.3s ease-in-out;
+}
+.page-enter, 
+.page-leave-to {
+  opacity: 0;
+}
