@@ -1,21 +1,5 @@
 <template>
   <div>
-    <vue-particles
-      class="particles"
-      color="#dddddd"
-      :particlesNumber="100"
-      :particle-opacity="0.5"
-      shapeType="polygon"
-      :lineLinked="true"
-      :line-opacity="0.2"
-      linesColor="#a3a3a3"
-      :particleSize="1"
-      :moveSpeed="2"
-      hovermode="repulse"
-      
-
-      >
-      </vue-particles>
     <div id="hero">
       <div
         :style="
@@ -43,7 +27,6 @@
 </template>
 
 <script>
-
 export default {
   props: ["title", "backgroundImg", "backgroundColor", "subtitle", "cta", "ctaurl","ctatarget","ctavariant"]
 };
@@ -100,12 +83,6 @@ export default {
     top: 0;
     z-index:1;
   }
-}
-.particles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
 }
 .content {
   z-index: 3;

@@ -1,20 +1,6 @@
 <template>
   <div>
     <section class="bg-dark hero text-light">
-      <vue-particles 
-      class="particles" 
-      color="#dddddd"
-      :particlesNumber="100"
-      :particle-opacity="0.5"
-      shapeType="polygon"
-      :lineLinked="true"
-      :line-opacity="0.2"
-      linesColor="#a3a3a3"
-      :particleSize="1"
-      :moveSpeed="2"
-      hovermode="repulse"
-
-      ></vue-particles>
       <b-container>
         <b-row>
           <b-col class="meta">
