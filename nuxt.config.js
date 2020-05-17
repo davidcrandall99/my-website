@@ -12,6 +12,9 @@ for (var i = 0; i in manifest; i++) {
   urls.push(manifest[i].uri);
 }
 
+
+console.log(urls)
+
 //now the nuxt config can begin
 export default {
   mode: "spa",

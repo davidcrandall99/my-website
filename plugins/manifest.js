@@ -77,6 +77,16 @@ let writeManifest = () => {
         //Sort by date, newest first
         await newData.sort((a, b) => b.date - a.date)
 
+        //Write a manifest for ALL pages, so we can add them to our 'routes' object in the nuxt.config.js file
+        fs.writeFile(
+          __dirname + `/../assets/manifest.js`,
+          `export const manifest = ${JSON.stringify(newData)}`,
+          err => {
+            if (err) {
+              throw err;
+            }
+          }
+        );
         //return the full object
         return newData;
       })
