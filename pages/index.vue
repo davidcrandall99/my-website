@@ -51,54 +51,6 @@
         <TechLogos />
       </b-container>
     </section>
-
-    <!-- tech stack -->
-    <!-- <section class="bg-dark text-light text-section">
-      <b-container>
-        <b-row>
-          <b-col md="4" xs="12" offset-md="2" offset-xs="0">
-            <b-list-group class="text-dark">
-              <b-list-group-item>React</b-list-group-item>
-              <b-list-group-item variant="success">VueJS</b-list-group-item>
-              <b-list-group-item>TypeScript</b-list-group-item>
-              <b-list-group-item variant="success">AWS</b-list-group-item>
-              <b-list-group-item variant="success">CI/CD</b-list-group-item>
-              <b-list-group-item variant="success">ExpressJS</b-list-group-item>
-              <b-list-group-item>Electron</b-list-group-item>
-              <b-list-group-item variant="success">ES6</b-list-group-item>
-              <b-list-group-item variant="success">SASS/SCSS/CSS</b-list-group-item>
-              <b-list-group-item>Serverless</b-list-group-item>
-              <b-list-group-item>PHP gets no luv :(</b-list-group-item>
-              <b-list-group-item variant="success">Jest</b-list-group-item>
-              <b-list-group-item>More and more every day...</b-list-group-item>
-            </b-list-group>
-          </b-col>
-          <b-col align-self="center" md="6" xs="12">
-            <h2>my stack</h2>
-            <p>
-              I have worked with many technologies, applications, frameworks,
-              and architectures. Every day, I make it a point to learn something
-              new.
-            </p>
-            <p>
-              These are just
-              <em>some</em> of the things I've worked with.
-            </p>
-            <hr class="border-light" />
-            <p>
-              This website alone uses the highlighted technologies. Be sure to
-              checkout the
-              <a
-                href="https://github.com/davidcrandall99/my-website"
-                target="_blank"
-                rel="noopener"
-              >github repo</a>
-              to see how it all works.
-            </p>
-          </b-col>
-        </b-row>
-      </b-container>
-    </section> -->
   </div>
 </template>
 
