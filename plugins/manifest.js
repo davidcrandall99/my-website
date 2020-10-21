@@ -10,10 +10,11 @@ let writeManifest = () => {
   //get the posts from github
   let gitPosts = async () => {
     try {
-
+      let pass = escape(process.env.PASS);
+      let user = escape(process.env.USER);
       console.info('Fetching posts from repo');
       await shell.cd(__dirname + "/../");
-      await shell.exec(`git clone https://${process.env.USER}:${process.env.PASS}@${process.env.REPO}`);
+      await shell.exec(`git clone https://${user}:${pass}@${process.env.REPO}`);
 
       console.info('Moving images to Nuxt static directory');
       await shell.mkdir(__dirname + '/../static/images/posts/');
