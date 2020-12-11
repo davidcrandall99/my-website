@@ -46,7 +46,7 @@
       </div>
     </section>
 
-    <section id="tech" class="bg-dark text-light text-section">
+    <section id="tech" class="has-background-dark text-light text-section">
       <div >
         <TechLogos />
       </div>
