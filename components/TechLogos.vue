@@ -1,18 +1,20 @@
 <template>
-	<div>
-		<div class="row">
-			<div class="column text-center title">
+	<div class="has-background-dark">
+		<div class="container is-fullhd">
+			<div class="column text-center title has-text-white">
 				<h2>Tech I use</h2>
 				<hr class="white" />
 			</div>
 		</div>
-		<div class="row text-center">
-			<div class="column" :key="i.name" v-for="i in images">
-				<img :alt="i.alt" :src="'/images/logos/' + i.name" class="bg-dark"/>
-				<p>{{ i.alt }}</p>
-			</div>
-			<div class="column" cols="2">
-				<p>and more...</p>
+		<div class="container is-fullhd">
+			<div class="columns is-multiline is-vcentered has-text-centered">
+				<div class="column is-one-fifth has-text-white" :key="i.name" v-for="i in images">
+					<img :alt="i.alt" :src="'/images/logos/' + i.name" class="bg-dark"/>
+					<p>{{ i.alt }}</p>
+				</div>
+				<div class="column is-one-fifth has-text-white">
+					<p>and more...</p>
+				</div>
 			</div>
 		</div>
 	</div>
