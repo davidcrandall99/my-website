@@ -8,13 +8,12 @@
         id="bg"
       ></div>
       <div class="cover"></div>
-      <div class="content">
-          <div class="row">
-            <div class="column">
+      <div class="content container">
+          <div class="columns is-vcentered">
+            <div class="column is-full">
               <h1 :if="title" v-html="title"></h1>
               <p :if="subtitle" v-html="subtitle"></p>
-              <a class="button" :if="cta"
-                :variant="ctavariant"
+              <a :class="'button ' + ctavariant" :if="cta"
                 :href="ctaurl"
                 :target="ctatarget"
               >{{cta}}</a>
@@ -36,15 +35,15 @@ export default {
   height: 100vh;
   width: 100vw;
   background: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 20px;
   background-size: cover;
   background-position: right top;
   background-repeat: no-repeat;
   background-color: black;
   position: relative;
+  .columns {
+    height: 100%;
+  }
   #bg {
     filter: grayscale(100%);
     background: black;
@@ -84,6 +83,7 @@ export default {
   }
 }
 .content {
+  height: 100%;
   z-index: 3;
 }
 section * {
