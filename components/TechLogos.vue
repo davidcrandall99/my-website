@@ -1,20 +1,20 @@
 <template>
 	<div>
-		<b-row>
-			<b-col class="text-center title">
+		<div class="row">
+			<div class="column text-center title">
 				<h2>Tech I use</h2>
 				<hr class="white" />
-			</b-col>
-		</b-row>
-		<b-row class="text-center d-flex justify-content-center column">
-			<b-col xs="12" sm="4" md="2"  align-self="center" :key="i.name" v-for="i in images">
-				<b-img-lazy :alt="i.alt" fluid-grow :src="'/images/logos/' + i.name" class="img bg-dark borderless"></b-img-lazy>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="column" :key="i.name" v-for="i in images">
+				<img :alt="i.alt" :src="'/images/logos/' + i.name" class="bg-dark"/>
 				<p>{{ i.alt }}</p>
-			</b-col>
-			<b-col cols="2" align-self="center">
+			</div>
+			<div class="column" cols="2">
 				<p>and more...</p>
-			</b-col>
-		</b-row>
+			</div>
+		</div>
 	</div>
 </template>
 

@@ -18,10 +18,6 @@ h1, h2, h3, a {
     color: #3898FF;
 }
 
-// Include Bootstrap and BootstrapVue SCSS files
-@import '~bootstrap/scss/bootstrap.scss';
-@import '~bootstrap-vue/src/index.scss';
-
 // Page transitions
 .page-enter-active,
 .page-leave-active {

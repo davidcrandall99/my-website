@@ -1,9 +1,9 @@
 <template>
   <div>
     <section class="bg-dark hero text-light">
-      <b-container>
-        <b-row>
-          <b-col class="meta">
+      <div>
+        <div class="row">
+          <div class="column" class="meta">
             <h1 :if="attributes.title">{{ attributes.title }}</h1>
             <p>
               <span :if="attributes.date">Published {{ attributes.date }}</span>
@@ -12,33 +12,33 @@
             </p>
             <nuxt-link to="/"><b-button variant="primary">Back home</b-button></nuxt-link>
             <hr />
-          </b-col>
-        </b-row>
-      </b-container>
+          </div>
+       </div>
+      </div>
     </section>
     <section id="post">
-      <b-container>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2">
+      <div>
+        <div class="row">
+          <div class="column" md="8" xs="12" offset-md="2">
             <component :is="selectedArticle" />
-          </b-col>
-        </b-row>
-      </b-container>
+          </div>
+       </div>
+      </div>
     </section>
     <section id="comments" class="bg-dark">
-      <b-container>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2" class="text-light">
+      <div>
+        <div class="row">
+          <div class="column" md="8" xs="12" offset-md="2" class="text-light">
             <h2>Leave a comment</h2>
             <hr class="border-primary"/>
-          </b-col>
-        </b-row>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2">
+          </div>
+       </div>
+        <div class="row">
+          <div class="column" md="8" xs="12" offset-md="2">
             <vue-disqus shortname="davidcrandall" />
-          </b-col>
-        </b-row>
-      </b-container>
+          </div>
+       </div>
+      </div>
     </section>
   </div>
 </template>

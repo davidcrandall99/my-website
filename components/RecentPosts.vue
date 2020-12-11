@@ -1,14 +1,15 @@
 <template>
   <div id="posts">
-    <b-row align-v="center">
-      <b-card-group columns>
+    <div class="row">
+      <div class="card-group">
         <nuxt-link :key="index" v-for="(item, index) in manifest" :to="item.uri" class="text-dark" :aria-label="item.title">
-          <b-card :title="item.title" tag="article">
+          <div class="card" tag="article">
+            <h3>{{item.title}}</h3>
             <p>{{ item.summary }}</p>
-          </b-card>
+          </div>
         </nuxt-link>
-      </b-card-group>
-    </b-row>
+      </div>
+   </div>
   </div>
 </template>
 

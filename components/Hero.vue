@@ -4,24 +4,23 @@
       <div
         :style="
         `background-image:url(${backgroundImg}); 
-        background-color: ${backgroundColor};`
-      "
+        background-color: ${backgroundColor};`"
         id="bg"
       ></div>
       <div class="cover"></div>
-      <b-container class="content">
-          <b-row>
-            <b-col>
+      <div class="content">
+          <div class="row">
+            <div class="column">
               <h1 :if="title" v-html="title"></h1>
               <p :if="subtitle" v-html="subtitle"></p>
-              <b-button :if="cta"
+              <a class="button" :if="cta"
                 :variant="ctavariant"
                 :href="ctaurl"
                 :target="ctatarget"
-              >{{cta}}</b-button>
-            </b-col>
-          </b-row>
-        </b-container>
+              >{{cta}}</a>
+            </div>
+         </div>
+        </div>
     </div>
   </div>
 </template>

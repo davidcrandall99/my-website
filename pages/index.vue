@@ -13,9 +13,9 @@
 
     <!--Intro section -->
     <section id="intro" class="text-section bg-black text-white">
-      <b-container>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2" offset-xs="0" align-self="center">
+      <div>
+        <div class="row">
+          <div class="column" md="8" xs="12" offset-md="2" offset-xs="0">
             <h2>well hello there</h2>
             <p>
               My name is David Crandall, and I am a software engineer, web
@@ -31,25 +31,25 @@
                 rel="noopener"
               >let me know.</a>
             </p>
-          </b-col>
-        </b-row>
-      </b-container>
+          </div>
+       </div>
+      </div>
     </section>
     <section id="posts-section">
-      <b-container>
-        <b-row align-v="center">
-          <b-col cols="12" class="text-center">
+      <div>
+        <div class="row" align-v="center">
+          <div class="column" cols="12" class="text-center">
             <h2>Recent posts</h2>
-          </b-col>
-        </b-row>
+          </div>
+       </div>
         <RecentPosts />
-      </b-container>
+      </div>
     </section>
 
     <section id="tech" class="bg-dark text-light text-section">
-      <b-container >
+      <div >
         <TechLogos />
-      </b-container>
+      </div>
     </section>
   </div>
 </template>
