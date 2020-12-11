@@ -1,39 +1,40 @@
 <template>
   <div>
-    <section class="bg-dark hero text-light">
+    <section class="hero has-background-dark has-text-white">
       <div>
-        <div class="row">
+        <div class="container is-fullhd">
           <div class="column meta">
-            <h1 :if="attributes.title">{{ attributes.title }}</h1>
+            <h1 class="title is-1 has-text-white" :if="attributes.title">{{ attributes.title }}</h1>
             <p>
               <span :if="attributes.date">Published {{ attributes.date }}</span>
               <br :if="attributes.date" />
               Author: David Crandall
             </p>
-            <nuxt-link to="/">Back home</nuxt-link>
-            <hr />
+            <nuxt-link class="button is-primary" to="/">Back home</nuxt-link>
           </div>
        </div>
       </div>
     </section>
     <section id="post">
       <div>
-        <div class="row">
-          <div class="column">
-            <component :is="selectedArticle" />
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <component :is="selectedArticle" />
+            </div>
           </div>
        </div>
       </div>
     </section>
     <section id="comments" class="bg-dark">
       <div>
-        <div class="row">
+        <div class="container">
           <div class="column text-light">
             <h2>Leave a comment</h2>
             <hr class="border-primary"/>
           </div>
        </div>
-        <div class="row">
+        <div class="container">
           <div class="column">
             <vue-disqus shortname="davidcrandall" />
           </div>
@@ -95,7 +96,18 @@ export default {
 };
 </script>
 <style lang="scss">
-
+  h1,h2,h3{
+    margin: 40px 0 10px 0;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
   .hero {
     padding: 40px 0;
     margin-bottom:40px;
@@ -104,6 +116,7 @@ export default {
   #post {
     img {
       max-width: 100%;
+      margin: 10px 0;
     }
     padding-bottom: 40px;
   }
@@ -126,4 +139,7 @@ export default {
     margin-bottom: 20px;
   }
 }
+  .button {
+    margin-top: 20px;
+  }
 </style>
