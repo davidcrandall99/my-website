@@ -1,7 +1,6 @@
-//theme overrides
-$dark: #101012;
-$primary: #0051A8;
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+/* Import Bulma Utilities */
+@import '~bulma/bulma';
 
 html, body {
     overflow-x: hidden;
@@ -10,14 +9,18 @@ html, body {
 h1, h2, h3, a {
     font-family: 'Merriweather', serif !important;
 }
-
+a.button {
+    text-decoration: none;
+}
 .title {
     padding-bottom: 20px;
 }
 .bg-black a {
     color: #3898FF;
 }
-
+img {
+    max-width: 100%;
+}
 // Page transitions
 .page-enter-active,
 .page-leave-active {

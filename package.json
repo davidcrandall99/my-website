@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/bulma": "^1.3.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/sitemap": "^2.0.1",
     "frontmatter-markdown-loader": "^3.1.0",
     "gray-matter": "^4.0.2",
     "node-sass": "^4.14.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.14.11",
     "sass-loader": "^8.0.2",
     "shelljs": "^0.8.4",
     "vue-disqus": "^3.0.5",
@@ -35,6 +36,6 @@
     "jest": "^24.9.0",
     "jest-serializer-vue": "^2.0.2",
     "ts-jest": "^25.5.1",
-    "vue-jest": "^4.0.0-beta.2"
+    "vue-jest": "^4.0.0-rc.1"
   }
 }
