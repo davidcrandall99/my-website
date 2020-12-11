@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 /* Import Bulma Utilities */
+$grey-darker:  hsl(0, 0%, 10%) !default;
+$grey-dark: hsl(0, 0%, 20%) !default;
 @import '~bulma/bulma';
 
 html, body {
