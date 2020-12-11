@@ -12,11 +12,11 @@
     />
 
     <!--Intro section -->
-    <section id="intro" class="text-section bg-black text-white">
+    <section id="intro" class="text-section has-background-black has-text-white">
       <div>
-        <div class="row">
+        <div class="container is-fullhd">
           <div class="column">
-            <h2>well hello there</h2>
+            <h2 class="title has-text-white">well hello there</h2>
             <p>
               My name is David Crandall, and I am a software engineer, web
               developer, engineering manager, photographer, drummer, bassist,
@@ -37,9 +37,9 @@
     </section>
     <section id="posts-section">
       <div>
-        <div class="row">
-          <div class="column text-center">
-            <h2>Recent posts</h2>
+        <div class="container is-fluid">
+          <div class="column has-text-centered">
+            <h2 class="title">Recent posts</h2>
           </div>
        </div>
         <RecentPosts />
