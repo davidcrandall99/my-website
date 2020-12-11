@@ -8,14 +8,14 @@
       cta="Connect On LinkedIn"
       ctaurl="https://www.linkedin.com/in/david-crandall-a3235033/"
       ctatarget="_blank"
-      ctavariant="primary"
+      ctavariant="is-primary"
     />
 
     <!--Intro section -->
     <section id="intro" class="text-section bg-black text-white">
       <div>
         <div class="row">
-          <div class="column" md="8" xs="12" offset-md="2" offset-xs="0">
+          <div class="column">
             <h2>well hello there</h2>
             <p>
               My name is David Crandall, and I am a software engineer, web
@@ -37,8 +37,8 @@
     </section>
     <section id="posts-section">
       <div>
-        <div class="row" align-v="center">
-          <div class="column" cols="12" class="text-center">
+        <div class="row">
+          <div class="column text-center">
             <h2>Recent posts</h2>
           </div>
        </div>

@@ -3,14 +3,14 @@
     <section class="bg-dark hero text-light">
       <div>
         <div class="row">
-          <div class="column" class="meta">
+          <div class="column meta">
             <h1 :if="attributes.title">{{ attributes.title }}</h1>
             <p>
               <span :if="attributes.date">Published {{ attributes.date }}</span>
               <br :if="attributes.date" />
               Author: David Crandall
             </p>
-            <nuxt-link to="/"><b-button variant="primary">Back home</b-button></nuxt-link>
+            <nuxt-link to="/">Back home</nuxt-link>
             <hr />
           </div>
        </div>
@@ -19,7 +19,7 @@
     <section id="post">
       <div>
         <div class="row">
-          <div class="column" md="8" xs="12" offset-md="2">
+          <div class="column">
             <component :is="selectedArticle" />
           </div>
        </div>
@@ -28,13 +28,13 @@
     <section id="comments" class="bg-dark">
       <div>
         <div class="row">
-          <div class="column" md="8" xs="12" offset-md="2" class="text-light">
+          <div class="column text-light">
             <h2>Leave a comment</h2>
             <hr class="border-primary"/>
           </div>
        </div>
         <div class="row">
-          <div class="column" md="8" xs="12" offset-md="2">
+          <div class="column">
             <vue-disqus shortname="davidcrandall" />
           </div>
        </div>
