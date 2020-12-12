@@ -1,44 +1,45 @@
 <template>
-  <div>
-    <section class="bg-dark hero text-light">
-      <b-container>
-        <b-row>
-          <b-col class="meta">
-            <h1 :if="attributes.title">{{ attributes.title }}</h1>
+  <div id="single">
+    <section class="hero has-background-dark has-text-white">
+      <div>
+        <div class="container is-fullhd">
+          <div class="column meta">
+            <h1 class="title is-1 has-text-white" :if="attributes.title">{{ attributes.title }}</h1>
             <p>
               <span :if="attributes.date">Published {{ attributes.date }}</span>
               <br :if="attributes.date" />
               Author: David Crandall
             </p>
-            <nuxt-link to="/"><b-button variant="primary">Back home</b-button></nuxt-link>
-            <hr />
-          </b-col>
-        </b-row>
-      </b-container>
+            <nuxt-link class="button is-primary" to="/">Back home</nuxt-link>
+          </div>
+       </div>
+      </div>
     </section>
     <section id="post">
-      <b-container>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2">
-            <component :is="selectedArticle" />
-          </b-col>
-        </b-row>
-      </b-container>
+      <div>
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <component :is="selectedArticle" />
+            </div>
+          </div>
+       </div>
+      </div>
     </section>
     <section id="comments" class="bg-dark">
-      <b-container>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2" class="text-light">
+      <div>
+        <div class="container">
+          <div class="column text-light">
             <h2>Leave a comment</h2>
             <hr class="border-primary"/>
-          </b-col>
-        </b-row>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2">
+          </div>
+       </div>
+        <div class="container">
+          <div class="column">
             <vue-disqus shortname="davidcrandall" />
-          </b-col>
-        </b-row>
-      </b-container>
+          </div>
+       </div>
+      </div>
     </section>
   </div>
 </template>
@@ -96,34 +97,46 @@ export default {
 </script>
 <style lang="scss">
 
-  .hero {
-    padding: 40px 0;
-    margin-bottom:40px;
-    position: relative;
-  }
-  #post {
+    #single {
+    .hero {
+      padding: 40px 0;
+      margin-bottom:40px;
+      position: relative;
+    }
+    h1,h2,h3{
+      margin: 40px 0 10px 0;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.7rem;
+    }
+    p {
+      margin-bottom: 24px;
+    }
     img {
       max-width: 100%;
+      margin: 10px 0;
     }
     padding-bottom: 40px;
+  
+  .meta a {
+    z-index: 99;
+    position: relative;
   }
-  .particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  top: 0;
-  left: 0;
-}
-.meta a {
-  z-index: 99;
-  position: relative;
-}
-#comments {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  h2 {
-    margin-bottom: 20px;
+  #comments {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+  .button {
+    margin-top: 20px;
   }
 }
 </style>

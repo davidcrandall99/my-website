@@ -1,20 +1,22 @@
 <template>
-	<div>
-		<b-row>
-			<b-col class="text-center title">
+	<div class="has-background-dark">
+		<div class="container is-fullhd">
+			<div class="column text-center title has-text-white">
 				<h2>Tech I use</h2>
 				<hr class="white" />
-			</b-col>
-		</b-row>
-		<b-row class="text-center d-flex justify-content-center column">
-			<b-col xs="12" sm="4" md="2"  align-self="center" :key="i.name" v-for="i in images">
-				<b-img-lazy :alt="i.alt" fluid-grow :src="'/images/logos/' + i.name" class="img bg-dark borderless"></b-img-lazy>
-				<p>{{ i.alt }}</p>
-			</b-col>
-			<b-col cols="2" align-self="center">
-				<p>and more...</p>
-			</b-col>
-		</b-row>
+			</div>
+		</div>
+		<div class="container is-fullhd">
+			<div class="columns is-multiline is-vcentered has-text-centered">
+				<div class="column is-one-fifth has-text-white" :key="i.name" v-for="i in images">
+					<img :alt="i.alt" :src="'/images/logos/' + i.name" class="bg-dark"/>
+					<p>{{ i.alt }}</p>
+				</div>
+				<div class="column is-one-fifth has-text-white">
+					<p>and more...</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 

@@ -80,18 +80,12 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://bootstrap-vue.js.org
-    "bootstrap-vue/nuxt",
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
     "@nuxtjs/sitemap"
   ],
-  bootstrapVue: {
-    bootstrapCSS: false,
-    bootstrapVueCSS: false
-  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

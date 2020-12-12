@@ -8,15 +8,15 @@
       cta="Connect On LinkedIn"
       ctaurl="https://www.linkedin.com/in/david-crandall-a3235033/"
       ctatarget="_blank"
-      ctavariant="primary"
+      ctavariant="is-primary"
     />
 
     <!--Intro section -->
-    <section id="intro" class="text-section bg-black text-white">
-      <b-container>
-        <b-row>
-          <b-col md="8" xs="12" offset-md="2" offset-xs="0" align-self="center">
-            <h2>well hello there</h2>
+    <section id="intro" class="text-section has-background-black has-text-white">
+      <div>
+        <div class="container is-fullhd">
+          <div class="column">
+            <h2 class="title has-text-white">well hello there</h2>
             <p>
               My name is David Crandall, and I am a software engineer, web
               developer, engineering manager, photographer, drummer, bassist,
@@ -31,25 +31,25 @@
                 rel="noopener"
               >let me know.</a>
             </p>
-          </b-col>
-        </b-row>
-      </b-container>
+          </div>
+       </div>
+      </div>
     </section>
     <section id="posts-section">
-      <b-container>
-        <b-row align-v="center">
-          <b-col cols="12" class="text-center">
-            <h2>Recent posts</h2>
-          </b-col>
-        </b-row>
+      <div>
+        <div class="container is-fluid">
+          <div class="column has-text-centered">
+            <h2 class="title">Recent posts</h2>
+          </div>
+       </div>
         <RecentPosts />
-      </b-container>
+      </div>
     </section>
 
-    <section id="tech" class="bg-dark text-light text-section">
-      <b-container >
+    <section id="tech" class="has-background-dark text-light text-section">
+      <div >
         <TechLogos />
-      </b-container>
+      </div>
     </section>
   </div>
 </template>

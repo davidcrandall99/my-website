@@ -1,7 +1,10 @@
-//theme overrides
-$dark: #101012;
-$primary: #0051A8;
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+/* Import Bulma Utilities */
+$grey-darker:  hsl(0, 0%, 10%) !default;
+$grey-dark: hsl(0, 0%, 20%) !default;
+$blue: #0051a8;
+$primary: $blue;
+@import '~bulma/bulma';
 
 html, body {
     overflow-x: hidden;
@@ -10,18 +13,15 @@ html, body {
 h1, h2, h3, a {
     font-family: 'Merriweather', serif !important;
 }
-
-.title {
-    padding-bottom: 20px;
+a.button {
+    text-decoration: none;
 }
 .bg-black a {
     color: #3898FF;
 }
-
-// Include Bootstrap and BootstrapVue SCSS files
-@import '~bootstrap/scss/bootstrap.scss';
-@import '~bootstrap-vue/src/index.scss';
-
+img {
+    max-width: 100%;
+}
 // Page transitions
 .page-enter-active,
 .page-leave-active {

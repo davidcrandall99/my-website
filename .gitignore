@@ -101,3 +101,5 @@ posts/*
 assets/manifest.js
 manifest-*
 assets/manifest.js
+package-lock.json
+package-lock.json
