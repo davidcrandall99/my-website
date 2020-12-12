@@ -2,6 +2,8 @@
 /* Import Bulma Utilities */
 $grey-darker:  hsl(0, 0%, 10%) !default;
 $grey-dark: hsl(0, 0%, 20%) !default;
+$blue: #0051a8;
+$primary: $blue;
 @import '~bulma/bulma';
 
 html, body {
