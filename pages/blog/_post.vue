@@ -114,6 +114,9 @@ export default {
     position: relative;
   }
   #post {
+    p {
+      margin-bottom: 24px;
+    }
     img {
       max-width: 100%;
       margin: 10px 0;
