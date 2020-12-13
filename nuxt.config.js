@@ -17,7 +17,7 @@ console.log(urls)
 
 //now the nuxt config can begin
 export default {
-  mode: "universal",
+  ssr: false,
   /*
    ** Headers of the page.
    */
