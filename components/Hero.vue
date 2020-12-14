@@ -9,7 +9,7 @@
       ></div>
       <div class="cover"></div>
       <div class="content container">
-          <div class="columns is-vcentered">
+          <div class="columns is-vcentered is-mobile">
             <div class="column is-full">
               <h1 :if="title" v-html="title"></h1>
               <p :if="subtitle" v-html="subtitle"></p>

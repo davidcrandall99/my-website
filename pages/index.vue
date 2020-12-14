@@ -78,16 +78,7 @@ section {
     background-color: #010101;
   }
 }
-#tech {
-  * {
-    z-index: 99;
-  }
-}
 #posts-section {
-  z-index: 99;
   background: white;
-}
-#intro {
-  z-index: 99;
 }
 </style>
