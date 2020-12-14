@@ -1,8 +1,8 @@
 <template>
   <div>
     <section class="hero has-background-dark has-text-white">
-		<div class="container is-fullhd">
-			<div class="columns is-vcentered">
+		<div class="container is-fluid is-mobile">
+			<div class="columns is-vcentered is-mobile">
 				<div class="column meta is-full">
 					<h1 class="title is-1 has-text-white has-text-centered">Blog</h1>
 				</div>
