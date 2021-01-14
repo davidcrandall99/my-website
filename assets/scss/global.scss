@@ -9,9 +9,14 @@ $primary: $blue;
 html, body {
     overflow-x: hidden;
 }
-
+body {
+    padding-top: 50px; //ensures room for content with sticky navbar
+}
 h1, h2, h3, a {
     font-family: 'Merriweather', serif !important;
+}
+h1 {
+    font-size: 1.6rem;
 }
 a.button {
     text-decoration: none;
@@ -21,6 +26,9 @@ a.button {
 }
 img {
     max-width: 100%;
+}
+.navbar {
+    top: 0;
 }
 // Page transitions
 .page-enter-active,
