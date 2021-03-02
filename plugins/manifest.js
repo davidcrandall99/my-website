@@ -71,7 +71,8 @@ let writeManifest = () => {
             uri: "/blog/" + data[i].split(".")[0],
             date: new Date(metaData.data.date),
             title: metaData.data.title,
-            summary: metaData.data.summary
+            summary: metaData.data.summary,
+            image: metaData.data.image ? metaData.data.image : false
           };
         }
 
