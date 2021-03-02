@@ -6,7 +6,7 @@
         <nuxt-link :to="item.uri" class="text-dark" :aria-label="item.title">
           <div class="card">
             <div class="card-content">
-              <div class="card-image" v-if="item.image !== false" :style="`background: url(${ item.image }); background-size: cover;`">
+              <div class="card-image" v-if="item.image !== false" :style="`background: url(${ item.image }); background-position: center center; background-size: cover;`">
               </div>
               <h3 class="title is-5">{{item.title}}</h3>
               <hr/>

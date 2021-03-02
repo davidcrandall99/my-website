@@ -6,6 +6,8 @@
           <nuxt-link :to="item.uri" class="text-dark" :aria-label="item.title">
             <div class="card">
               <div class="card-content">
+              <div class="card-image" v-if="item.image !== false" :style="`background: url(${ item.image }); background-size: cover; background-position: center center;`">
+              </div>
                 <h3 class="title is-5">{{item.title}}</h3>
                 <hr/>
                 <p class="has-text-black">{{ item.summary }}</p>
@@ -63,6 +65,15 @@ export default {
 
 #posts {
   padding: 40px 0;
+}
+.card-image{
+  height: 200px;
+  width: calc(100% + 80px);
+  margin-left: -40px;
+  margin-top: -40px;
+  margin-bottom: 15px;
+  display: block;
+  background-position: top right;
 }
 @media (min-width: 1024px) {
   .card {
