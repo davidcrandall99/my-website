@@ -18,7 +18,7 @@ let writeManifest = () => {
 
       console.info('Moving images to Nuxt static directory');
       await shell.mkdir(__dirname + '/../static/images/posts/');
-      await shell.cp(__dirname + '/../posts/images/**/*', __dirname + '/../static/images/posts/');
+      await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');
 
       return;
     } catch (e) {
