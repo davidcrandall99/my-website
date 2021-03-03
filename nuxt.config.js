@@ -32,9 +32,9 @@ export default {
         content: "My name is David Crandall - and I make things."
       },
       { name: 'keywords', content: 'david crandall, david gene crandall, dave crandall, david crandall photography, david crandall blog, tech blog'},
-      { hid: 'title', name: 'og:title', content: 'David Crandall' },
+      { hid: 'og:title', name: 'og:title', content: 'David Crandall' },
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'David Crandall'},
-      { name: 'og:description', content: 'My name is David. I make things.' },
+      { hid: 'og:description', name: 'og:description', content: 'My name is David. I make things.' },
       { name: 'og:type', content: 'website' },
       { name: "msapplication-TileColor", content: "#0A0A0A" },
       { name: "msapplication-TileImage", content : "/ms-icon-144x144.png"},

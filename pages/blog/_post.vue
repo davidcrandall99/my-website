@@ -48,7 +48,9 @@
 import Vue from 'vue';
 import { manifest } from "@/assets/manifest.js";
 import VueDisqus from 'vue-disqus';
+import VueMeta from 'vue-meta'
 Vue.use(VueDisqus);
+Vue.use(VueMeta);
 
 let data = [];
 for (var i = 0; i in manifest; i++) {
@@ -90,7 +92,29 @@ export default {
   },
   head() {
     return {
-    title: `${this.attributes.title ? this.attributes.title + ' | ' : ''}David Crandall`
+    title: `${this.attributes.title ? this.attributes.title + ' | ' : ''}David Crandall`,
+    meta: [
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: this.attributes.image
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: this.attributes.summary
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: this.attributes.summary
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: this.attributes.title
+      }
+    ]
     }
   }
 };
