@@ -123,7 +123,7 @@ export default {
 
     #single {
     .hero {
-      padding: 40px 0;
+      padding: 0 0 50px 0;
       margin-bottom:40px;
       position: relative;
     }
