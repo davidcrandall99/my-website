@@ -1,6 +1,6 @@
 <template>
   <div id="single">
-    <section class="hero has-background-dark has-text-white">
+    <section class="hero has-background-dark has-text-white" :style="`background: url(${attributes.image}) center no-repeat; background-size: cover; background-blend-mode: soft-light;`">
       <div>
         <div class="container is-fullhd">
           <div class="column meta">
@@ -126,6 +126,7 @@ export default {
       padding: 0 0 50px 0;
       margin-bottom:40px;
       position: relative;
+      height: 45vh;
     }
     h1,h2,h3{
       margin: 40px 0 10px 0;
