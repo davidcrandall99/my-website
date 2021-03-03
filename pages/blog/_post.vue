@@ -106,12 +106,12 @@ export default {
       },
       {
         hid: 'og:description',
-        name: 'og:description',
+        property: 'og:description',
         content: this.attributes.summary
       },
       {
         hid: 'og:title',
-        name: 'og:title',
+        property: 'og:title',
         content: this.attributes.title
       }
     ]
