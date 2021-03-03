@@ -72,7 +72,7 @@ nav {
             background: #242424;
             width: 100vw;
             margin-left: -32px;
-            margin-top: 20px;
+            margin-top: 5px;
         }
         & .open {
             height: 100vh;
