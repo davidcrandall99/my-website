@@ -4,14 +4,14 @@
             <div class="container is-fluid is-flex">
                 <div class="level is-vcentered">
                     <div class="level-left">
-                        <p class="level-item title is-4 has-text-white hidden-mobile" v-on:click="navOpen">David Crandall</p>
+                        <p class="level-item title is-4 has-text-white hidden-mobile" v-on:click="navToggle">David Crandall</p>
                     </div>
                     <div :class="['level-right', 'link-container', isOpen ? 'open' : 'closed']">
-                        <nuxt-link to="/" class="level-item has-text-white">Home</nuxt-link>
-                        <nuxt-link to="/blog/" class="level-item has-text-white">Blog</nuxt-link>
+                        <nuxt-link to="/" class="level-item has-text-white" v-on:click.native="navClose">Home</nuxt-link>
+                        <nuxt-link to="/blog/" class="level-item has-text-white" v-on:click.native="navClose">Blog</nuxt-link>
                     </div>
                 </div>
-                <Hamburger v-on:click.native="navOpen" :open="[isOpen ? 'open' : 'closed']" class="is-hidden-tablet" />
+                <Hamburger v-on:click.native="navToggle" :open="[isOpen ? 'open' : 'closed']" class="is-hidden-tablet" />
             </div>
         </nav>
     </div>
@@ -30,11 +30,11 @@ import Hamburger from '~/components/Hamburger'
 
         },
         methods: {
-            navOpen: function() {
+            navToggle: function() {
                 this.isOpen = !this.isOpen;
-                if(this.isOpen === true) {
-
-                }
+            },
+            navClose: function() {
+                this.isOpen = false;
             }
         }
     }
