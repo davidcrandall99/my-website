@@ -8,7 +8,7 @@
             <div class="card-content">
               <div class="card-image" v-if="item.image !== false" :style="`background: url(${ item.image }); background-position: center center; background-size: cover;`">
               </div>
-              <h3 class="title is-5">{{item.title}}</h3>
+              <h3>{{item.title}}</h3>
               <hr/>
               <p class="has-text-black">{{ item.summary }}</p>
             </div>
