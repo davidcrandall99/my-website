@@ -42,6 +42,7 @@ import Hamburger from '~/components/Hamburger'
 
 <style lang="scss" scoped>
 nav {
+    top: 0;
     position: fixed;
     width: 100%;
     height: 80px;
