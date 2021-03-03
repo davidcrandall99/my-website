@@ -96,7 +96,7 @@ export default {
     meta: [
       {
         hid: 'og:image',
-        name: 'og:image',
+        property: 'og:image',
         content: this.attributes.image
       },
       {
