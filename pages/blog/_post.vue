@@ -10,7 +10,7 @@
               <br :if="attributes.date" />
               Author: David Crandall
             </p>
-            <nuxt-link class="button is-primary" to="/">Back home</nuxt-link>
+            <nuxt-link class="button is-primary" to="/blog/">See more posts</nuxt-link>
           </div>
        </div>
       </div>
