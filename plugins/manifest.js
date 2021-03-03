@@ -10,12 +10,16 @@ let writeManifest = () => {
   //get the posts from github
   let gitPosts = async () => {
     try {
+      //set github password/username
       let pass = escape(process.env.PASS);
       let user = escape(process.env.USER);
+
+      //fetch the posts from the posts repository. creates a 'posts' folder for each md file
       console.info('Fetching posts from repo');
       await shell.cd(__dirname + "/../");
       await shell.exec(`git clone https://${user}:${pass}@${process.env.REPO}`);
 
+      //move post images to the static folder, for use with nuxt app
       console.info('Moving images to Nuxt static directory');
       await shell.mkdir(__dirname + '/../static/images/posts/');
       await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');

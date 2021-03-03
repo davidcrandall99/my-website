@@ -4,6 +4,9 @@
             <h3>{{ album.name }}</h3>
             <p>{{ album.release_date }}</p>
             <img :src="album.images[1].url" />
+            <ol>
+                <li :key="index" v-for="(track, index) in album.trackListing">{{ track.track_number }}. {{ track.name }}</li>
+            </ol>
         </div>
     </div>
 </template>
@@ -18,7 +21,7 @@ let albumsEndpoint = `${artistEndpoint}/${artistID}/albums`; //gets all albums b
 
 //this function returns a string for all track data from an album, where 'x' is the album ID, which can be taken from the albumsEndpoint data
 let tracksEndpoint = (x) => {
-    return `https://api.spotify.com/v1/albums/${x}/tracks`;
+    return `https://api.spotify.com/v1/albums/${x}/tracks?limit=50`;
 }
 
 export default {
@@ -43,14 +46,23 @@ export default {
             data : data
         };
 
-        //fetches a brand new auth token
+        //fetches a brand new auth token; use await to ensure a token is available
         this.token = await this.$axios(config).then(x => {return x.data.access_token});
 
         //fetches album using auth token
         this.albums = await this.$axios.$get(albumsEndpoint, {headers: {
             Authorization: `Bearer ${this.token}`
         }}).then(x => { return x.items })
+
+        for (var i = 0; i in this.albums; i++) {
+            var albumID = this.albums[i].id
+            
+            this.albums[i].trackListing = await this.$axios.$get(tracksEndpoint(albumID), {headers: {
+                Authorization: `Bearer ${this.token}`
+            }}).then(x => { return x.items })
+        }
     },
+    fetchOnServer: true,
     components: {
         Album
     }
