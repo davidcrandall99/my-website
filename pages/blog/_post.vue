@@ -126,7 +126,7 @@ export default {
       padding: 0 0 50px 0;
       margin-bottom:40px;
       position: relative;
-      height: 45vh;
+      min-height: 45vh;
     }
     h1,h2,h3{
       margin: 40px 0 10px 0;
