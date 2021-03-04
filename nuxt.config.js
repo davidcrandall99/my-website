@@ -71,7 +71,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  // plugins: ["~/plugins/registerComponents.js"],
+  //  plugins: ["~/plugins/disqus.js"],
   /*
    ** Nuxt.js dev-modules
    */

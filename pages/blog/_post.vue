@@ -36,7 +36,7 @@
        </div>
         <div class="container">
           <div class="column">
-            <vue-disqus shortname="davidcrandall" />
+            <vue-disqus shortname="davidcrandall" v-if="showComments" />
           </div>
        </div>
       </div>
@@ -81,14 +81,32 @@ export default {
   data() {
     return {
       attributes: {},
-      selectedArticle: null
+      selectedArticle: null,
+      showComments: false
     };
   },
-
+  methods: {
+    handleScroll: function(event) {
+      if(process.client) {
+        var comments = document.getElementById("comments");
+        if(window.pageYOffset > comments.offsetTop - 1000) {
+          this.showComments = true;
+        }
+      }
+    }
+  },
   created() {
     const markdown = require(`~/posts/posts/${this.$route.params.post}.md`);
     this.attributes = markdown.attributes;
     this.selectedArticle = markdown.vue.component;
+    // window.addEventListener('scroll', this.handleScroll);
+
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll);
   },
   head() {
     return {
