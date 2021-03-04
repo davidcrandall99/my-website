@@ -3,7 +3,7 @@
     <div class="container is-fullhd">
       <div class="columns is-multiline is-vcentered is-centered">
         <div class="column is-one-fifth-desktop is-4-tablet" :key="index" v-for="(item, index) in manifest">
-        <nuxt-link :to="item.uri" class="text-dark" :aria-label="item.title">
+        <nuxt-link :to="item.uri + '/'" class="text-dark" :aria-label="item.title">
           <div class="card">
             <div class="card-content">
               <div class="card-image" v-if="item.image !== false" :style="`background: url(${ item.image }); background-position: center center; background-size: cover;`">
