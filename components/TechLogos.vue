@@ -30,19 +30,19 @@
 					alt: 'VueJS'
 				},
 				{
-					name: 'react.png',
+					name: 'react.webp',
 					alt: 'React'
 				},
 				{
-					name: 'sass.png',
+					name: 'sass.webp',
 					alt: 'SASS, SCSS'
 				},
 				{
-					name: 'es6.png',
+					name: 'es6.webp',
 					alt: 'ES6'
 				},
 				{
-					name: 'github.png',
+					name: 'github.webp',
 					alt: 'git & github'
 				},
 				{
@@ -50,35 +50,35 @@
 					alt: 'HTML, HTML5',
 				},
 				{
-					name: 'lambda.png',
+					name: 'lambda.webp',
 					alt: 'AWS Lambda'
 				},
 				{
-					name: 'php.png',
+					name: 'php.webp',
 					alt: 'PHP',
 				},
 				{ 
-					name: 'aws.png',
+					name: 'aws.webp',
 					alt: 'AWS'
 				},
 				{
-					name: 'creativecloud.png',
+					name: 'creativecloud.webp',
 					alt: 'Creative Cloud'
 				},
 				{
-					name:'css.png',
+					name:'css.webp',
 					alt: 'CSS'
 				},
 				{
-					name: 'dynamodb.png',
+					name: 'dynamodb.webp',
 					alt: 'DynamoDB'
 				},
 				{
-					name: 'serverless.png',
+					name: 'serverless.webp',
 					alt: 'Serverless Framework'
 				},
 				{
-					name: 'wordpress.png',
+					name: 'wordpress.webp',
 					alt: 'Wordpress'
 				}
 			]
