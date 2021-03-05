@@ -140,7 +140,9 @@ export default {
 };
 </script>
 <style lang="scss">
-
+    .markdown-body {
+      padding: 35px;
+    }
     #single {
     .hero {
       padding: 0 0 50px 0;

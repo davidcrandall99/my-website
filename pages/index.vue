@@ -72,7 +72,7 @@ section {
   position: relative;
   padding: 40px 0;
   &.text-section {
-    padding: 80px 0;
+    padding: 80px 35px;
   }
   &.bg-black {
     background-color: #010101;
