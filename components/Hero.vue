@@ -64,6 +64,8 @@ export default {
     letter-spacing: 0.5px;
     max-width: 50%;
     flex: none;
+    font-size: 3em;
+    margin-bottom: 10px;
   }
   p {
     color: rgba(255, 255, 255, 0.8);

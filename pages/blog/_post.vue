@@ -1,21 +1,19 @@
 <template>
   <div id="single">
-    <section class="hero has-background-dark has-text-white" :style="`background: url(${attributes.image}) center no-repeat; background-size: cover; background-blend-mode: soft-light;`">
+    <section class="hero is-fullheight has-background-dark has-text-white" :style="`background: url(${attributes.image}) center no-repeat; background-size: cover; background-blend-mode: soft-light;`">
 
-        <div class="container is-flex is-fluid is-mobile is-max-desktop">
-          <div class="columns is-vcentered is-mobile">
-            <div class="column meta is-full">
-              <h1 class="title is-1 has-text-white" :if="attributes.title">{{ attributes.title }}</h1>
+        <div class="container is-fluid is-flex">
+          <div class="columns is-mobile is-vcentered is-centered is-full">
+            <div class="column is-half has-text-centered">
+              <h1 class="title has-text-white" :if="attributes.title">{{ attributes.title }}</h1>
               <p>
                 <span :if="attributes.date">Published {{ attributes.date }}</span>
                 <br :if="attributes.date" />
                 Author: David Crandall
               </p>
-              <nuxt-link class="button is-primary" to="/blog/">See more posts</nuxt-link>
             </div>
           </div>
        </div>
-
     </section>
     <section id="post">
       <div>
@@ -28,7 +26,7 @@
        </div>
       </div>
     </section>
-    <section id="comments" class="bg-dark">
+    <section id="comments">
       <div>
         <div class="container">
           <div class="column text-light">
@@ -42,6 +40,17 @@
           </div>
        </div>
       </div>
+    </section>
+    <section id="bottom" class="has-background-dark hero is-halfheight has-text-white">
+       <div class="container is-fluid is-flex">
+         <div class="columns is-vcentered">
+          <div class="column has-text-centered is-full">
+            <h2 class="">Why stop there?</h2>
+            <p>If you enjoyed this post, click the button below to read more from my blog!</p>
+            <nuxt-link class="button is-primary" to="/blog/">See more posts</nuxt-link>
+          </div>
+         </div>
+       </div>
     </section>
   </div>
 </template>
@@ -146,9 +155,10 @@ export default {
     #single {
     .hero {
       padding: 0 0 50px 0;
-      margin-bottom:40px;
       position: relative;
-      min-height: 45vh;
+      .columns {
+        width: 100%;
+      }
     }
     h1,h2,h3{
       margin: 40px 0 10px 0;

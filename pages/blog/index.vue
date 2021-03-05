@@ -1,9 +1,9 @@
 <template>
   <div>
-    <section class="hero has-background-dark has-text-white">
-		<div class="container is-fluid is-mobile">
-			<div class="columns is-vcentered is-mobile">
-				<div class="column meta is-full">
+    <section class="hero has-background-dark has-text-white is-halfheight">
+		<div class="container is-flex">
+			<div class="columns is-mobile is-vcentered is-centered is-full">
+				<div class="column has-text-centered is-full">
 					<h1 class="title is-1 has-text-white has-text-centered">Blog</h1>
 				</div>
 			</div>
@@ -24,10 +24,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hero {
-  height: 340px;
-}
-.columns {
-	height: 100%;
-}
+
 </style>
