@@ -1,19 +1,21 @@
 <template>
   <div id="single">
     <section class="hero has-background-dark has-text-white" :style="`background: url(${attributes.image}) center no-repeat; background-size: cover; background-blend-mode: soft-light;`">
-      <div>
-        <div class="container is-fullhd">
-          <div class="column meta">
-            <h1 class="title is-1 has-text-white" :if="attributes.title">{{ attributes.title }}</h1>
-            <p>
-              <span :if="attributes.date">Published {{ attributes.date }}</span>
-              <br :if="attributes.date" />
-              Author: David Crandall
-            </p>
-            <nuxt-link class="button is-primary" to="/blog/">See more posts</nuxt-link>
+
+        <div class="container is-flex is-fluid is-mobile is-max-desktop">
+          <div class="columns is-vcentered is-mobile">
+            <div class="column meta is-full">
+              <h1 class="title is-1 has-text-white" :if="attributes.title">{{ attributes.title }}</h1>
+              <p>
+                <span :if="attributes.date">Published {{ attributes.date }}</span>
+                <br :if="attributes.date" />
+                Author: David Crandall
+              </p>
+              <nuxt-link class="button is-primary" to="/blog/">See more posts</nuxt-link>
+            </div>
           </div>
        </div>
-      </div>
+
     </section>
     <section id="post">
       <div>
