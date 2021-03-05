@@ -4,7 +4,7 @@
 
         <div class="container is-fluid is-flex">
           <div class="columns is-mobile is-vcentered is-centered is-full">
-            <div class="column is-half has-text-centered">
+            <div class="column is-full has-text-centered">
               <h1 class="title has-text-white" :if="attributes.title">{{ attributes.title }}</h1>
               <p>
                 <span :if="attributes.date">Published {{ attributes.date }}</span>
@@ -160,18 +160,7 @@ export default {
         width: 100%;
       }
     }
-    h1,h2,h3{
-      margin: 40px 0 10px 0;
-    }
-    h1 {
-      font-size: 3rem;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-    h3 {
-      font-size: 1.7rem;
-    }
+
     p {
       margin-bottom: 24px;
     }
