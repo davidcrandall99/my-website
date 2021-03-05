@@ -64,7 +64,7 @@ export default {
 <style lang="scss" scoped>
 
 #posts {
-  padding: 40px 0;
+  padding: 35px;
 }
 .card-image{
   height: 30vh;

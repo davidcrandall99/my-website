@@ -2,7 +2,7 @@
   <div id="posts">
     <div class="container is-fullhd">
       <div class="columns is-multiline is-vcentered is-centered">
-        <div class="column is-one-fifth-desktop is-4-tablet" :key="index" v-for="(item, index) in manifest">
+        <div class="column is-4-desktop is-4-tablet" :key="index" v-for="(item, index) in manifest">
         <nuxt-link :to="item.uri + '/'" class="text-dark" :aria-label="item.title">
           <div class="card">
             <div class="card-content">
@@ -35,10 +35,10 @@ export default {
 <style lang="scss" scoped>
 
 #posts {
-  padding: 40px 0;
+  padding: 35px;
 }
 .card-image{
-  height: 20vh;
+  height: 30vh;
   width: calc(100% + 80px);
   margin-left: -40px;
   margin-top: -40px;
