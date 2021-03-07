@@ -1,15 +1,14 @@
 <template>
-<div>
-  <div v-if="isOpen" class="cookie has-background-dark">
-
-          <p class="has-text-white is-size-7" v-html="message"></p><br>
-          <a class="button is-primary" @click="accept">{{ buttonTextAccept }}</a>
-          <a class="button is-link is-outlined" @click="deny">{{ buttonTextDeny }}</a>
-
-  </div>
-  <div v-if="!accepted && !isOpen" class="cookie-settings">
+  <div>
+    <div v-if="bannerOpen" class="cookie has-background-dark">
+      <p class="has-text-white is-size-7" v-html="message"></p>
+      <br />
+      <a class="button is-primary" @click="accept">{{ buttonTextAccept }}</a>
+      <a class="button is-link is-outlined" @click="deny">{{  buttonTextDeny  }}</a>
+    </div>
+    <div v-if="!accepted && !bannerOpen" class="cookie-settings">
       <a class="button is-primary" @click="clearGDPR">Change Cookie Settings</a>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -19,68 +18,65 @@ export default {
   props: {
     buttonTextAccept: {
       type: String,
-      default: "Accept"
+      default: "Accept",
     },
     buttonTextDeny: {
       type: String,
-      default: "Deny"
+      default: "Deny",
     },
     message: {
       type: String,
       default:
-        "My website uses cookies for anonymous <a class=\"has-text-info\" href=\"https://www.google.com/about/company/user-consent-policy/\" target=\"_blank\">Google Analytics</a> and <a class=\"has-text-info\" href=\"https://help.disqus.com/en/articles/1717103-disqus-privacy-policy\" target=\"_blank\">Disqus</a> blog comments. If you're OK with that, please click the \"Accept\" button."
+        'My website uses cookies for anonymous <a class="has-text-info" href="https://www.google.com/about/company/user-consent-policy/" target="_blank">Google Analytics</a> and <a class="has-text-info" href="https://help.disqus.com/en/articles/1717103-disqus-privacy-policy" target="_blank">Disqus</a> blog comments. If you\'re OK with that, please click the "Accept" button.',
     },
-    position: {
-      type: String,
-      default: "top"
-    }
   },
   data() {
     return {
-      isOpen: false,
-      accepted: false
+      bannerOpen: false,
+      accepted: false,
     };
   },
   computed: {
     containerPosition() {
       return `cookie--${this.position}`;
-    }
+    },
   },
   created() {
-    if (!this.getGDPR() === true) {
-      this.isOpen = true;
+    if (!this.isGDPR() === true) {
+      this.bannerOpen = true;
     } else {
       this.accepted = true;
     }
   },
   methods: {
     clearGDPR() {
-        if(process.browser) {
-            localStorage.removeItem('GDPR:accepted');
-            this.isOpen = true;
-            this.accepted = false;
-        }
+      if (process.browser) {
+        localStorage.removeItem("GDPR:accepted");
+        this.bannerOpen = true;
+        this.accepted = false;
+      }
     },
-    getGDPR() {
+    isGDPR() {
       if (process.browser) {
         return localStorage.getItem("GDPR:accepted", true);
       }
     },
     accept() {
       if (process.browser) {
-        this.isOpen = false;
+        this.bannerOpen = false;
         this.accepted = true;
         localStorage.setItem("GDPR:accepted", true);
       }
     },
     deny() {
       if (process.browser) {
-        this.isOpen = false;
+        this.bannerOpen = false;
         localStorage.setItem("GDPR:accepted", false);
       }
-    }
-  }
+    },
+  },
 };
+
 </script>
 
 <style lang="scss" scoped>
@@ -90,18 +86,18 @@ export default {
   bottom: 0px;
   padding: 20px;
   @media (min-width: 768px) {
-      padding: 20px;
-      right: 0;
-      width: 400px;
-      border-radius: 5px;
-      bottom: -5px;
+    padding: 20px;
+    right: 0;
+    width: 400px;
+    border-radius: 5px;
+    bottom: -5px;
   }
 }
 .cookie-settings {
-    position: fixed;
-    padding: 20px;
-    z-index: 200;
-    bottom: 0;
-    right: 0;
+  position: fixed;
+  padding: 20px;
+  z-index: 200;
+  bottom: 0;
+  right: 0;
 }
 </style>
