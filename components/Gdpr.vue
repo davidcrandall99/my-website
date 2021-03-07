@@ -3,11 +3,11 @@
     <div v-if="bannerOpen" class="cookie has-background-dark">
       <p class="has-text-white is-size-7" v-html="message"></p>
       <br />
-      <a class="button is-primary" @click="accept">{{ buttonTextAccept }}</a>
-      <a class="button is-link is-outlined" @click="deny">{{  buttonTextDeny  }}</a>
+      <button type="button" class="button is-primary" @click="accept" >{{ buttonTextAccept }}</button>
+      <button type="button" class="button is-link is-outlined" @click="deny">{{ buttonTextDeny }}</button>
     </div>
     <div v-if="!accepted && !bannerOpen" class="cookie-settings">
-      <a class="button is-primary" @click="clearGDPR">Change Cookie Settings</a>
+      <button type="button" class="button is-primary" @click="clearGDPR">Change Cookie Settings</button>
     </div>
   </div>
 </template>
@@ -91,6 +91,9 @@ export default {
     width: 400px;
     border-radius: 5px;
     bottom: -5px;
+  }
+  button {
+    cursor: pointer;
   }
 }
 .cookie-settings {
