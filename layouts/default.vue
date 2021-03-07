@@ -2,6 +2,7 @@
   <div>
       <Nav />
     <nuxt />
+    <gdpr />
   </div>
 </template>
 
@@ -56,10 +57,12 @@ html {
 </style>
 
 <script>
+import Gdpr from '~/components/Gdpr.vue';
 import Nav from "~/components/Nav";
 export default {
   components: {
-    Nav
+    Nav,
+    Gdpr
   },
   transition: "default"
 }
