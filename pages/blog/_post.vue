@@ -99,9 +99,11 @@ export default {
   methods: {
     handleScroll: function(event) {
       if(process.client) {
-        var comments = document.getElementById("comments");
-        if(window.pageYOffset > comments.offsetTop - 1000) {
-          this.showComments = true;
+          if (localStorage.getItem("GDPR:accepted", true) === "true") {
+          var comments = document.getElementById("comments");
+          if(window.pageYOffset > comments.offsetTop - 1000) {
+            this.showComments = true;
+          }
         }
       }
     }
