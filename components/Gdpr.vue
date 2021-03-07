@@ -8,7 +8,7 @@
       <a class="button is-link is-outlined" @click="deny">{{  buttonTextDeny  }}</a>
     </div>
     <div v-if="!accepted && !bannerOpen" class="cookie-settings">
-      <a class="button is-primary" @click="clearGDPR">Change Cookie Settings</a>
+      <a class="button is-primary" @click="clearGDPR">Cookie Settings</a>
     </div>
     </client-only>
   </div>
