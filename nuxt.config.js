@@ -115,8 +115,7 @@ export default {
     }
   },
   sitemap: {
-    hostname: "https://www.davidcrandall.com",
+    hostname: "https://davidcrandall.com",
     gzip: true,
-    exclude: ["/blog"] //for now
   }
 };
