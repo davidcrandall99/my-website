@@ -43,12 +43,19 @@ export default {
       return `cookie--${this.position}`;
     },
   },
-  afterCreated() {
+  mounted() {
     if (!this.isGDPR() === true) {
       this.bannerOpen = true;
-    } else {
+    } 
+    if(this.isGDPR() === true) {
       this.accepted = true;
+      this.bannerOpen = false;
     }
+    if(this.isGDPR() === false) {
+      this.accepted = false;
+      this.bannerOpen = true;
+    }
+    
   },
   methods: {
     clearGDPR() {
