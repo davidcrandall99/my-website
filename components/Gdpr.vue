@@ -44,20 +44,36 @@ export default {
     },
   },
   mounted() {
+    // this.$nextTick(function () {
+
     if (!this.isGDPR() === true) {
       this.bannerOpen = true;
     } 
-    if(this.isGDPR() === true) {
+    if(this.isGDPR() === "true") {
       this.accepted = true;
       this.bannerOpen = false;
+      this.loadGA();
     }
-    if(this.isGDPR() === false) {
+    if(this.isGDPR() === "false") {
       this.accepted = false;
       this.bannerOpen = true;
     }
-    
+    // })
   },
   methods: {
+    loadGA() {
+      if(process.browser) {
+          //load google analytics
+          let gtm = document.createElement('script');
+          gtm.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=G-XWGK9Y29Z4');
+          gtm.setAttribute('async','');
+          document.head.appendChild(gtm)
+          let ga = document.createElement('script');
+          let inline = document.createTextNode("window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XWGK9Y29Z4')");
+          ga.appendChild(inline);
+          document.head.appendChild(ga);
+      }
+    },
     clearGDPR() {
       if (process.browser) {
         localStorage.removeItem("GDPR:accepted");
@@ -75,6 +91,7 @@ export default {
         this.bannerOpen = false;
         this.accepted = true;
         localStorage.setItem("GDPR:accepted", true);
+        this.loadGA();
       }
     },
     deny() {
