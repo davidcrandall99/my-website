@@ -18,6 +18,7 @@ console.log(urls)
 //now the nuxt config can begin
 export default {
   ssr: true,
+  target: 'static',
   /*
    ** Headers of the page.
    */
