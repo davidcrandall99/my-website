@@ -46,6 +46,9 @@ let writeManifest = () => {
         __dirname + "/../posts/posts/" + filename,
         "utf8",
         (err, data) => {
+          if(err) {
+            console.log(err);
+          }
           return resolve(data);
         }
       );
@@ -104,12 +107,11 @@ let writeManifest = () => {
           lists.push([listPosition]);
         }
         if(i + 1 < data.length) {
-          lists[listPosition].push([i - (listPosition * 10)])
+          lists[listPosition].push([i - (listPosition * 9)])
         }
-        lists[listPosition][i - listPosition * 10] = data[i];
+        lists[listPosition][i - listPosition * 9] = data[i];
       }
       
-
       //write out the JSON files
       for (i in lists) {
         fs.writeFile(
