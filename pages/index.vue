@@ -63,7 +63,30 @@ export default {
     Hero,
     RecentPosts,
     TechLogos
-  }
+  },
+  head() {
+    return {
+      script: [
+       { 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Person",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      },{ 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Brand",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      }
+      ]
+    }
+  },
 };
 </script>
 

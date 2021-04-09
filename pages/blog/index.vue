@@ -19,6 +19,39 @@ import AllPosts from "~/components/AllPosts";
 export default {
   components: {
     AllPosts
+  },
+  head() {
+    return{
+      script:[
+        { 
+          type: 'application/ld+json', 
+          json: {
+            "@context"  : "http://schema.org",
+            "@type"     : "Blog",
+            "headline"  : "David Crandall's Blog",
+            "author"    : "David Crandall",
+            "mainEntityOfPage": `https://davidcrandall.com/blog/`
+          } 
+        },
+        { 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Person",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      },{ 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Brand",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      }
+      ]
+    }
   }
 };
 </script>

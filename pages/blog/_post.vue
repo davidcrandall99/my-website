@@ -60,6 +60,8 @@ import Vue from 'vue';
 import { manifest } from "@/assets/manifest.js";
 import VueDisqus from 'vue-disqus';
 import VueMeta from 'vue-meta'
+import { ISO_8601 } from 'moment';
+var moment = require('moment'); // require
 Vue.use(VueDisqus);
 Vue.use(VueMeta);
 
@@ -145,6 +147,45 @@ export default {
         property: 'og:title',
         content: this.attributes.title
       }
+    ],
+    script:[
+      { 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Article",
+          "headline"  : this.attributes.title,
+          "author"    : "David Crandall",
+          "datePublished": moment(this.attributes.date).format("YYYY-MM-DD"),
+          "image": this.attributes.image,
+          "mainEntityOfPage": `https://davidcrandall.com${this.$route.path}`
+        } 
+      },{ 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Person",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      },{ 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Brand",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      },{ 
+          type: 'application/ld+json', 
+          json: {
+            "@context"  : "http://schema.org",
+            "@type"     : "Blog",
+            "headline"  : "David Crandall's Blog",
+            "author"    : "David Crandall",
+            "mainEntityOfPage": `https://davidcrandall.com/blog/`
+          } 
+        }
     ]
     }
   }
