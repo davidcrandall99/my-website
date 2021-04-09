@@ -93,7 +93,6 @@ sw.*
 #this file is generated on the fly
 assets/manifest.js
 
-package-lock.json
 
 #ignore the posts directory
 posts
@@ -101,5 +100,3 @@ posts/*
 assets/manifest.js
 manifest-*
 assets/manifest.js
-package-lock.json
-package-lock.json
