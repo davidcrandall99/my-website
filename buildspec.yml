@@ -7,7 +7,7 @@ phases:
       - npm i npm@latest -g
   pre_build:
     commands:
-     - npm i -s --fix
+     - npm install --fix
      - npm run manifest
      - npm test
   build:
