@@ -64,6 +64,16 @@ export default {
     Nav,
     Gdpr
   },
-  transition: "default"
+  transition: "default",
+  head() {
+    return {
+      link: [
+        {
+          "rel" : "canonical",
+          "href": "https://davidcrandall.com" + this.$route.path
+        }
+      ]
+    }
+  }
 }
 </script>
