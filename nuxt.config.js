@@ -118,5 +118,14 @@ export default {
   sitemap: {
     hostname: "https://davidcrandall.com",
     gzip: true,
+
+    filter ({ routes }) {
+      return routes.map(route => {
+        route.url = `${route.url}/`
+        route.changefreq = 'daily'
+        route.priority = 1
+        return route
+      })
+    }
   }
 };
