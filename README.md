@@ -1,4 +1,4 @@
-# www.davidcrandall.com
+# davidcrandall.com
 
 > The code for my website. It's a work in progress.
 

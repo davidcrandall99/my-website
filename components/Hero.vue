@@ -13,10 +13,15 @@
             <div class="column is-full">
               <h1 :if="title" v-html="title"></h1>
               <p :if="subtitle" v-html="subtitle"></p>
-              <a :class="'button ' + ctavariant" :if="cta"
+              <a :class="'button ' + ctavariant" v-if="cta && ctaurl"
                 :href="ctaurl"
                 :target="ctatarget"
               >{{cta}}</a>
+              <nuxt-link 
+                :class="'button ' + ctavariant" 
+                :to="nuxtlink"
+                v-if="nuxtlink"
+                >{{cta}}</nuxt-link>
             </div>
          </div>
         </div>
@@ -26,7 +31,7 @@
 
 <script>
 export default {
-  props: ["title", "backgroundImg", "backgroundColor", "subtitle", "cta", "ctaurl","ctatarget","ctavariant"]
+  props: ["title", "backgroundImg", "backgroundColor", "subtitle", "cta", "ctaurl","ctatarget","ctavariant", "nuxtlink"]
 };
 </script>
 
@@ -41,6 +46,10 @@ export default {
   background-repeat: no-repeat;
   background-color: black;
   position: relative;
+  p {
+    max-width: 500px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
   .columns {
     height: 100%;
   }

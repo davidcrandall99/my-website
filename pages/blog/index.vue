@@ -1,6 +1,7 @@
 <template>
   <div>
-    <section class="hero has-background-dark has-text-white is-halfheight">
+    <section class="hero has-background-dark has-text-white">
+      <div class="overlay"></div>
 		<div class="container is-flex">
 			<div class="columns is-mobile is-vcentered is-centered is-full">
 				<div class="column has-text-centered is-full">
@@ -12,13 +13,64 @@
     <AllPosts />
   </div>
 </template>
-
+<style lang="scss" scoped>
+.hero {
+  background-image: url('/images/bloghero.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 75vh;
+  .overlay {
+    width: 100vw;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+  }
+}
+</style>
 <script>
 import AllPosts from "~/components/AllPosts";
 
 export default {
   components: {
     AllPosts
+  },
+  head() {
+    return{
+      title: 'Blog | David Crandall',
+      script:[
+        { 
+          type: 'application/ld+json', 
+          json: {
+            "@context"  : "http://schema.org",
+            "@type"     : "Blog",
+            "headline"  : "David Crandall's Blog",
+            "author"    : "David Crandall",
+            "mainEntityOfPage": `https://davidcrandall.com/blog/`
+          } 
+        },
+        { 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Person",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      },{ 
+        type: 'application/ld+json', 
+        json: {
+          "@context"  : "http://schema.org",
+          "@type"     : "Brand",
+          "name"      : "David Crandall",
+          "mainEntityOfPage": `https://davidcrandall.com`
+        } 
+      }
+      ]
+    }
   }
 };
 </script>
