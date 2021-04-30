@@ -59,6 +59,14 @@ html {
 <script>
 import Gdpr from '~/components/Gdpr.vue';
 import Nav from "~/components/Nav";
+
+let path = (path) => {
+  if (path.lastIndexOf('/') === path.length-1) {
+    return path;
+  }
+  return path + '/';
+}
+
 export default {
   components: {
     Nav,
@@ -70,7 +78,7 @@ export default {
       link: [
         {
           "rel" : "canonical",
-          "href": "https://davidcrandall.com" + this.$route.path
+          "href": "https://davidcrandall.com" + path(this.$route.path)
         }
       ]
     }

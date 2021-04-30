@@ -118,8 +118,7 @@ export default {
   sitemap: {
     hostname: "https://davidcrandall.com",
     gzip: true,
-    path: 'sitemap-main.xml',
-
+    path: 'sitemap.xml',
     filter ({ routes }) {
       return routes.map(route => {
         route.url = `${route.url}/`
