@@ -25,7 +25,6 @@ export default {
   head: {
     title: "David Crandall",
     meta: [
-      { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
@@ -86,7 +85,10 @@ export default {
     "@nuxtjs/pwa",
     // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
     "@nuxtjs/sitemap",
-    ["@nuxtjs/amp", {removeInlineStyles: false}]
+    ["@nuxtjs/amp", {
+      removeInlineStyles: false,
+      origin: 'https://davidcrandall.com'
+    }]
   ],
   /*
    ** Axios module configuration
@@ -98,6 +100,9 @@ export default {
    */
   generate: {
     routes: urls
+  },
+  router: {
+    trailingSlash: true
   },
   build: {
     extend(config, _ctx) {

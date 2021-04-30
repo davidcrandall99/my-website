@@ -74,13 +74,16 @@ export default {
   },
   transition: "default",
   head() {
-    return {
-      link: [
-        {
-          "rel" : "canonical",
-          "href": "https://davidcrandall.com" + path(this.$route.path)
-        }
-      ]
+
+    if(this.$route.path.indexOf('/amp') === -1) {
+      return {
+        link: [
+          {
+            "rel" : "canonical",
+            "href": "https://davidcrandall.com" + path(this.$route.path)
+          }
+        ]
+      }
     }
   }
 }
