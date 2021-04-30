@@ -40,6 +40,7 @@ export default {
   },
   head() {
     return{
+      title: 'Blog | David Crandall',
       script:[
         { 
           type: 'application/ld+json', 
