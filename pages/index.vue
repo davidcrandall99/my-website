@@ -1,14 +1,14 @@
 <template>
   <div>
     <Hero
-      title="David Crandall"
-      subtitle="i drink and i make things work"
+      title="I drink, and I make things"
+      subtitle="Welcome to my website and blog, where I write about music, gardening, web development, and everything inbetween."
       backgroundImg="/images/side-pic.webp"
       backgroundColor="black"
-      cta="Connect On LinkedIn"
-      ctaurl="https://www.linkedin.com/in/david-crandall-a3235033/"
-      ctatarget="_blank"
+      cta="Check out my blog"
+      ctatarget="_self"
       ctavariant="is-primary"
+      nuxtlink="/blog/"
     />
 
     <!--Intro section -->
