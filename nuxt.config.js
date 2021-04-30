@@ -85,7 +85,8 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     // Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    ["@nuxtjs/amp", {removeInlineStyles: false}]
   ],
   /*
    ** Axios module configuration
