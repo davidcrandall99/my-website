@@ -50,7 +50,7 @@ nav {
     box-shadow: 0 -5px 14px #000;
     z-index: 100;
     p {
-        margin-bottom: 0 !important;
+        margin-bottom: 0;
         padding-bottom: 5px;
     }
     .level {
