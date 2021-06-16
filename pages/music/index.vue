@@ -142,7 +142,22 @@ export default {
           property: "og:image",
           content: 'https://davidcrandall.com/images/side-pic.jpg',
         },
-      ],
+        {
+            hid: 'description',
+            name: 'description',
+            content: 'David Crandall is a musician, music composer, music & sound producer, and has written & composed a number of songs for film and television.'
+        },
+        {
+            hid: 'og:description',
+            property: 'og:description',
+            content: 'David Crandall is a musician, music composer, music & sound producer, and has written & composed a number of songs for film and television.'
+        },
+        {
+            hid: 'og:title',
+            property: 'og:title',
+            content: 'Music by David Crandall'
+        }
+    ],
       script: [
         {
           type: "application/ld+json",
