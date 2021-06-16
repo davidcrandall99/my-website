@@ -88,7 +88,14 @@ export default {
     ["@nuxtjs/amp", {
       removeInlineStyles: false,
       origin: 'https://davidcrandall.com'
-    }]
+    }],
+    "@nuxtjs/redirect-module"
+  ],
+  redirect: [
+      {
+          from: '^.*(?<!\/|.jpg|.png|.svg)$',
+          to: (from, req) => req.url + '/'
+      }
   ],
   /*
    ** Axios module configuration
