@@ -34,8 +34,22 @@ a.button {
     font-size: 1.5em;
     text-decoration: none;
 }
-.bg-black a {
-    color: #3898FF;
+.bg-dark {
+    background: $grey-darker;
+    color: #fefefe;
+    p, h1, h2, h3 {
+        color: #fefefe;
+    }
+    a {
+        color: #3898FF;
+    }
+}
+.bg-black { 
+    background: black;
+    color: #fefefe;
+    a {
+        color: #3898FF;
+    }
 }
 img {
     max-width: 100%;

@@ -9,6 +9,7 @@
                     <div :class="['level-right', 'link-container', isOpen ? 'open' : 'closed']">
                         <nuxt-link to="/" class="level-item has-text-white" v-on:click.native="navClose">Home</nuxt-link>
                         <nuxt-link to="/blog/" class="level-item has-text-white" v-on:click.native="navClose">Blog</nuxt-link>
+                        <nuxt-link to="/music/" class="level-item has-text-white" v-on:click.native="navClose">Music</nuxt-link>
                     </div>
                 </div>
                 <Hamburger v-on:click.native="navToggle" :open="[isOpen ? 'open' : 'closed']" class="is-hidden-tablet" />
