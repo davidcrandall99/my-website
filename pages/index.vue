@@ -66,6 +66,7 @@ export default {
   },
   head() {
     return {
+      title: 'David Crandall | Official Website and Blog',
       script: [
        { 
         type: 'application/ld+json', 

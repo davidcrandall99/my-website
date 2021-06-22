@@ -38,6 +38,17 @@ export default {
       accepted: false,
     };
   },
+  watch: {
+    '$route': function(to, from) {
+      if(this.isGDPR() === "true") {
+        if(process.browser) {
+          gtag('config', 'UA-191731899-1', {
+            'page_path': to.path
+          });
+        }
+      }
+    }
+  },
   computed: {
     containerPosition() {
       return `cookie--${this.position}`;
@@ -65,11 +76,11 @@ export default {
       if(process.browser) {
           //load google analytics
           let gtm = document.createElement('script');
-          gtm.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=G-XWGK9Y29Z4');
+          gtm.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=UA-191731899-1');
           gtm.setAttribute('async','');
           document.head.appendChild(gtm)
           let ga = document.createElement('script');
-          let inline = document.createTextNode("window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XWGK9Y29Z4')");
+          let inline = document.createTextNode("window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-191731899-1')");
           ga.appendChild(inline);
           document.head.appendChild(ga);
       }
