@@ -128,6 +128,10 @@ export default {
       });
     }
   },
+  //auto loads components as they are used in a template without having to import them
+  components: true,
+
+  //generates sitemap
   sitemap: {
     hostname: "https://davidcrandall.com",
     gzip: true,
