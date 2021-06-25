@@ -1,79 +1,19 @@
 <template>
   <div>
-    <div id="sabrina" class="showcase bg-dark">
-      <div class="container">
-        <div class="content left">
-          <p class="preamble">Music feature</p>
-          <h1>Music featured the Chilling Adventure of Sabrina!</h1>
-          <p>
-            Watch Sabrina and Lucifer dance to my song, 'Waltz of David' on
-            Netflix's Chilling Adventures of Sabrina. Be sure to watch Season 2
-            Episode 9 on Netflix to see it in action!
-          </p>
-          <a
-            class="button is-primary"
-            target="_blank"
-            href="https://www.netflix.com/title/80223989"
-            >Watch on Netflix</a
-          ><br />
-          <a href="https://www.youtube.com/watch?v=MfJrxlEqGJ0" target="_blank"
-            >Listen to the full song on YouTube</a
-          >
-        </div>
-      </div>
-    </div>
-
-    <div id="bourdain" class="showcase">
-      <div class="container">
-        <div class="content right">
-          <p class="preamble">Music feature</p>
-          <h1>Anthony Bourdain's No Reservations: Kurdistan</h1>
-          <p>
-            I was lucky to have my song "Freedom" featured as part of a musical
-            montage to bookend the Kurdistan episode of Anthony Bourdain's No
-            Reservations. You can watch and listen to it 37 minutes in on
-            episode 15 of Season 8.
-          </p>
-          <a
-            class="button is-primary"
-            target="_blank"
-            href="https://open.spotify.com/track/1ZO5oPdYlc2vVx5v1irwOu?si=fb2c6a73b60c4eda"
-            >Listen on Spotify</a
-          ><br />
-          <a
-            href="https://www.hulu.com/watch/9e3c16a9-81a1-4d6b-9684-b3276e32e338"
-            target="_blank"
-            >Watch the episode on Hulu</a
-          >
-        </div>
-      </div>
-    </div>
-    <div id="belushi" class="showcase bg-dark">
-      <div class="container">
-        <div class="content right">
-          <p class="preamble">Music feature</p>
-          <h1>Biography channel: John Belushi</h1>
-          <p>
-            John Belushi has always been one of my favorite comedic actors and
-            SNL cast members. My song 'Freedom' was used for the end-credits and
-            backdrop to emotional stories about John from his family and
-            friends. I take pride in the emotion my music can add to a story,
-            and this is something I'm really proud of.
-          </p>
-          <a
-            class="button is-primary"
-            target="_blank"
-            href="https://vimeo.com/473236125"
-            >Watch the Documentary</a
-          ><br />
-          <a
-            href="https://open.spotify.com/track/1ZO5oPdYlc2vVx5v1irwOu?si=fb2c6a73b60c4eda"
-            target="_blank"
-            >Listen to 'Freedom' on Spotify</a
-          >
-        </div>
-      </div>
-    </div>
+    <large-feature 
+      v-for="item, index in showcase"
+      :key="index"
+      :preamble="item.preamble" 
+      :title="item.title" 
+      :description="item.description"
+      :btnCopy="item.btnCopy"
+      :btnUrl="item.btnUrl"
+      :linkCopy="item.linkCopy"
+      :linkUrl="item.linkUrl"
+      :isDark="item.isDark"
+      :bgImage="item.bgImage"
+    />
+    
 
     <div id="workedwith">
       <div class="container">
@@ -132,7 +72,13 @@
 </template>
 
 <script>
+const showcase = require('~/assets/music-showcase.json');
 export default {
+  data() {
+    return {
+      showcase: showcase
+    }
+  },
   head() {
     return {
       title: "Music | David Crandall",
@@ -194,55 +140,6 @@ export default {
   box-sizing: border-box;
 }
 
-.showcase {
-  height: 100vh;
-  min-height: 800px;
-  width: 100%;
-  position: relative;
-  &::before {
-    content: "";
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
-  }
-  .container {
-    div {
-      padding: 20px;
-    }
-    .content {
-      width: 45%;
-    }
-  }
-  @media (max-width: 900px) {
-    &::before {
-      background-position: right;
-    }
-    .container {
-      .content {
-        width: 100%;
-      }
-    }
-    * {
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-    }
-  }
-}
-#sabrina::before {
-  background-image: url("/images/music/sabrinabg.jpg");
-}
-#bourdain::before {
-  background-image: url("/images/music/noreservations.jpg");
-}
-#belushi::before {
-  background-image: url("/images/music/belushi.jpg");
-}
 #workedwith {
   padding: 40px 0;
   h1 {

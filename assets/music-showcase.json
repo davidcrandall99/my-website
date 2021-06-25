@@ -1,0 +1,35 @@
+{
+    "sabrina": {
+        "preamble": "Music feature",
+        "title": "Music featured on Netflix's Chilling Adventures of Sabrina!",
+        "description": "Watch Sabrina and Lucifer dance to my song, 'Waltz of David' on Netflix's Chilling Adventures of Sabrina. Be sure to watch Season 2 Episode 9 on Netflix to see it in action!",
+        "btnCopy": "Watch on Netflix",
+        "btnUrl": "https://www.netflix.com/title/80223989",
+        "linkCopy": "Listen to the full song on YouTube",
+        "linkUrl": "https://www.youtube.com/watch?v=MfJrxlEqGJ0",
+        "isDark": "true",
+        "bgImage": "/images/music/sabrinabg.jpg"
+    },
+    "bourdain": {
+        "preamble": "Music feature",
+        "title": "Anthony Bourdain's No Reservations: Kurdistan",
+        "description": "I was lucky to have my song \"Freedom\" featured as part of a musical montage to bookend the Kurdistan episode of Anthony Bourdain's No Reservations. You can watch and listen to it 37 minutes in on episode 15 of Season 8.",
+        "btnCopy": "Listen on Spotify",
+        "btnUrl": "https://open.spotify.com/track/1ZO5oPdYlc2vVx5v1irwOu?si=fb2c6a73b60c4eda",
+        "linkCopy": "Watch the episode on Hulu",
+        "linkUrl": "https://www.hulu.com/watch/9e3c16a9-81a1-4d6b-9684-b3276e32e338",
+        "isDark": "false",
+        "bgImage": "/images/music/noreservations.jpg"
+    },
+    "belushi": {
+        "preamble": "Music feature",
+        "title": "Biography channel: John Belushi",
+        "description": "John Belushi has always been one of my favorite comedic actors and SNL cast members. My song 'Freedom' was used for the end-credits and backdrop to emotional stories about John from his family and friends. I take pride in the emotion my music can add to a story, and this is something I'm really proud of.",
+        "btnCopy": "Watch the Documentary",
+        "btnUrl": "https://vimeo.com/473236125",
+        "linkCopy": "Listen to 'Freedom' on Spotify",
+        "linkUrl": "https://open.spotify.com/track/1ZO5oPdYlc2vVx5v1irwOu?si=fb2c6a73b60c4eda",
+        "isDark": "true",
+        "bgImage": "/images/music/belushi.jpg"
+    }
+}
