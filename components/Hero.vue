@@ -4,7 +4,10 @@
       <div
         :style="
         `background-image:url(${backgroundImg}); 
-        background-color: ${backgroundColor};`"
+        background-color: ${backgroundColor};
+        background-attachment: fixed;
+        background-position: top;
+        `"
         id="bg"
       ></div>
       <div class="cover"></div>
@@ -30,8 +33,25 @@
 </template>
 
 <script>
+import { mount } from '@vue/test-utils';
+import { gsap } from 'gsap';
 export default {
-  props: ["title", "backgroundImg", "backgroundColor", "subtitle", "cta", "ctaurl","ctatarget","ctavariant", "nuxtlink"]
+  props: ["title", "backgroundImg", "backgroundColor", "subtitle", "cta", "ctaurl","ctatarget","ctavariant", "nuxtlink"],
+
+  mounted() {
+    let tl = gsap.timeline();
+    tl.from('#bg', {
+      opacity: 0,
+      duration: 1
+    })
+    .from('.content .columns *', {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      stagger: .25,
+      ease: "power3.out"
+    })
+  },
 };
 </script>
 
