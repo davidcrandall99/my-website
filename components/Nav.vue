@@ -19,10 +19,19 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
 import Hamburger from '~/components/Hamburger'
     export default {
         components: {
             Hamburger
+        },
+        mounted() {
+            gsap.from('.navbar', {
+                y: -100,
+                duration: 1,
+                ease: "power3.out",
+                delay: 1
+            })
         },
         data() {
             return {
@@ -50,6 +59,9 @@ nav {
     display: flex;
     box-shadow: 0 -5px 14px #000;
     z-index: 100;
+    &.is-dark {
+        background: rgba(25,25,25,0.85);
+    }
     p {
         margin-bottom: 0;
         padding-bottom: 5px;
