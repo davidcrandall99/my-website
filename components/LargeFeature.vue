@@ -1,4 +1,5 @@
 <template>
+
   <div
     :class="`showcase ${isDark === 'true' ? 'bg-dark' : ''}`"
     :style="`background-image: url(${bgImage});`"
@@ -27,11 +28,42 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
-import { stringify } from "gray-matter";
+import { gsap } from "gsap";
 export default {
+    mounted: function() {
+        var ScrollTrigger = require('gsap/ScrollTrigger');
+        gsap.registerPlugin(ScrollTrigger)
+
+        var content = gsap.utils.toArray('.showcase .content');
+        content.forEach((section) =>{
+            gsap.fromTo(section.children, {
+                x: -100,
+                opacity: 0
+            }, {
+                x: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 70%'
+                },
+                stagger: .25
+            })
+        })
+
+        // gsap.fromTo('.content', {
+        //     x: -1000,
+        // }, {
+        //     x: 0,
+        //     duration: 3,
+        //     scrollTrigger: '.content'
+        // })
+    },
   props: {
     preamble: {
       type: String,
@@ -62,8 +94,8 @@ export default {
       default: "",
     },
     isDark: {
-      type: Boolean,
-      default: true,
+      type: String,
+      default: "true",
     },
     bgImage: {
       type: String,
@@ -83,6 +115,7 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  opacity: 1;
 
   .container {
     display: flex;
