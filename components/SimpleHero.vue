@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="hero has-background-dark has-text-white">
+    <slanted-section class="hero has-background-dark has-text-white" :style="`background-image: url(${bgImage });`">
       <div class="overlay"></div>
       <div class="container is-flex">
         <div class="columns is-mobile is-vcentered is-centered is-full">
@@ -9,22 +9,23 @@
           </div>
         </div>
       </div>
-    </section>
+    </slanted-section>
   </div>
 </template>
 
 <script>
 export default {
-    props: ['title']
+    props: ['title','bgImage']
 };
 </script>
 
 <style lang="scss" scoped>
 .hero {
   background-size: cover;
-  background-position: center;
+  background-position: top center;
+  background-attachment: fixed;
   position: relative;
-  height: 75vh;
+  height: 100vh;
   .overlay {
     width: 100vw;
     height: 100%;

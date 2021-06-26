@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="hero has-background-dark has-text-white">
+    <slanted-section class="hero has-background-dark has-text-white">
       <div class="overlay"></div>
 		<div class="container is-flex">
 			<div class="columns is-mobile is-vcentered is-centered is-full">
@@ -9,8 +9,10 @@
 				</div>
 			</div>
 		</div>
+    </slanted-section>
+    <section>
+      <AllPosts />
     </section>
-    <AllPosts />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -32,12 +34,8 @@
 }
 </style>
 <script>
-import AllPosts from "~/components/AllPosts";
 
 export default {
-  components: {
-    AllPosts
-  },
   head() {
     return{
       title: 'Blog | David Crandall',

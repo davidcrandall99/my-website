@@ -1,14 +1,16 @@
 <template>
 <div>
     <simple-hero title="Photography" />
-    <div class="container">
-        <div class="grid">
-            <div class="item" :key="index" v-for="set, index in photosets" :style="`background-image:url(${set.thumbnail})`">
-                <nuxt-link class="link" :to="`/photography/gallery/${set.id}/`"></nuxt-link>
-                <p>{{ set.title }}</p>
+    <slanted-section>
+        <div class="container">
+            <div class="grid">
+                <div class="item" :key="index" v-for="set, index in photosets" :style="`background-image:url(${set.thumbnail})`">
+                    <nuxt-link class="link" :to="`/photography/gallery/${set.id}/`"></nuxt-link>
+                    <p>{{ set.title }}</p>
+                </div>
             </div>
         </div>
-    </div>
+    </slanted-section>
 </div>
 </template>
 

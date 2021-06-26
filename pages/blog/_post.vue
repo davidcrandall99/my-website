@@ -1,6 +1,6 @@
 <template>
   <div id="single">
-    <section class="hero is-fullheight has-background-dark has-text-white" :style="`background: url(${attributes.image}) center no-repeat; background-size: cover; background-blend-mode: soft-light;`">
+    <slanted-section class="hero is-fullheight has-background-dark has-text-white" :style="`background: url(${attributes.image}) center no-repeat; background-size: cover; background-blend-mode: soft-light;`">
 
         <div class="container is-fluid is-flex">
           <div class="columns is-mobile is-vcentered is-centered is-full">
@@ -14,7 +14,7 @@
             </div>
           </div>
        </div>
-    </section>
+    </slanted-section>
     <section id="post">
       <div>
         <div class="container">
@@ -26,7 +26,7 @@
        </div>
       </div>
     </section>
-    <section id="comments">
+    <slanted-section id="comments">
       <div>
         <div class="container">
           <div class="column text-light">
@@ -40,10 +40,10 @@
           </div>
        </div>
       </div>
-    </section>
+    </slanted-section>
     <section id="bottom" class="has-background-dark hero is-halfheight has-text-white">
        <div class="container is-fluid is-flex">
-         <div class="columns is-vcentered">
+         <div class="columns is-vcentered is-desktop is-mobile">
           <div class="column has-text-centered is-full">
             <h2 class="">Why stop there?</h2>
             <p>If you enjoyed this post, click the button below to read more from my blog!</p>
@@ -192,6 +192,10 @@ export default {
 };
 </script>
 <style lang="scss">
+    #bottom {
+      margin-top: -100px;
+      padding-top: 100px;
+    }
     .markdown-body {
       padding: 35px;
     }
@@ -219,7 +223,8 @@ export default {
   }
   #comments {
     padding-top: 40px;
-    padding-bottom: 40px;
+    z-index:1;
+    background: #fff;
     h2 {
       margin-bottom: 20px;
     }
