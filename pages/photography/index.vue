@@ -52,6 +52,12 @@ import SimpleHero from '~/components/SimpleHero.vue';
             box-sizing: border-box;
             padding: 20px;
             overflow: hidden;
+            @media (max-width: 800px) {
+                width: 50%;
+            }
+            @media (max-width: 600px) {
+                width: 100%;
+            }
             .link {
                 position: absolute;
                 left: 0;

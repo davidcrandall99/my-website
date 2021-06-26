@@ -41,16 +41,20 @@ export default {
       .then((response) => response.json())
       .then((data) => {
         return data;
-      });
+      })
   },
-  mounted: function() {
-    var ScrollTrigger = require('gsap/ScrollTrigger');
-    gsap.registerPlugin(ScrollTrigger);
+  mounted: function () {
+      var ScrollTrigger = require('gsap/ScrollTrigger');
+        gsap.registerPlugin(ScrollTrigger);
+  },
+  updated: function() {
     
     //animate photos in on scroll
     var photos = gsap.utils.toArray('.photo');
     photos.forEach((photo) => {
-        gsap.fromTo(photo, {
+        var tl = gsap.timeline();
+        tl.restart();
+        tl.fromTo(photo, {
             opacity: 0
         },
         {
@@ -58,7 +62,7 @@ export default {
             scrollTrigger: {
                 trigger: photo,
                 start: 'top 60%',
-                end: '+=40%',
+                end: 'top 10%',
                 scrub: true,
             },
             stagger: .25
@@ -73,7 +77,9 @@ export default {
         stagger: 0.5,
         scrollTrigger: {
             trigger: '#bottom',
-            start: 'top 40%'
+            start: 'top 40%',
+            end: 'top top',
+            scrub: true
         }
     })
 

@@ -11,6 +11,9 @@ $primary: $blue;
 html, body {
     font-family: 'Merriweather', sans-serif;
 }
+html {
+    overflow-x: hidden;
+}
 #bottom {
     margin-bottom: -80px;
 }
@@ -19,8 +22,11 @@ h1, h2, h3, h4, .title, nav a, .button {
     font-weight: bold;
     text-transform: uppercase;
 }
-h1, .title {
+h1, .title, title {
     font-size: 3em;
+    @media screen and (max-width: 600px) {
+        font-size: 2.7em;
+    }
 }
 h2 {
     font-size: 2.5em;
