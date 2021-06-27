@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slanted-section class="hero has-background-dark has-text-white" :style="`background-image: url(${bgImage });`">
+    <slanted-section class="hero has-background-dark has-text-white" :style="`background-image: url(${ bgImage });`">
       <div class="overlay"></div>
       <div class="container is-flex">
         <div class="columns is-mobile is-vcentered is-centered is-full">

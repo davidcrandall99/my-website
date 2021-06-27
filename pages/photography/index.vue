@@ -1,6 +1,6 @@
 <template>
 <div>
-    <simple-hero title="Photography" />
+    <simple-hero bgImage="https://live.staticflickr.com/65535/48650271863_2f267b8055_k_d.jpg" title="Photography" />
     <slanted-section>
         <div class="container">
             <div class="grid">

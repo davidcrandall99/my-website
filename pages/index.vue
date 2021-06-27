@@ -47,9 +47,9 @@
     </section>
 
     <section id="tech" class="has-background-dark text-light text-section">
-      <div >
+
         <TechLogos />
-      </div>
+
     </section>
   </div>
 </template>
@@ -97,5 +97,8 @@ export default {
 }
 #intro {
   padding-bottom: 150px;
+}
+#tech {
+  overflow-x: hidden;
 }
 </style>

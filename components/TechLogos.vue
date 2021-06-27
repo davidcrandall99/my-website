@@ -1,7 +1,7 @@
 <template>
 	<div class="has-background-dark">
 		<div class="container is-fullhd">
-			<div class="column text-center title has-text-white">
+			<div class="text-center column title has-text-white">
 				<h2>Tech I use</h2>
 				<hr class="white" />
 			</div>
