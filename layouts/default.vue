@@ -3,6 +3,7 @@
       <Nav />
     <nuxt />
     <gdpr />
+    <Footer />
   </div>
 </template>
 
