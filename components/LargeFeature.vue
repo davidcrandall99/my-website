@@ -55,14 +55,6 @@ export default {
                 stagger: .25
             })
         })
-
-        // gsap.fromTo('.content', {
-        //     x: -1000,
-        // }, {
-        //     x: 0,
-        //     duration: 3,
-        //     scrollTrigger: '.content'
-        // })
     },
   props: {
     preamble: {

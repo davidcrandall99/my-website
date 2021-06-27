@@ -8,6 +8,7 @@
                     </div>
                     <div :class="['level-right', 'link-container', isOpen ? 'open' : 'closed']">
                         <nuxt-link to="/" class="level-item has-text-white" v-on:click.native="navClose">Home</nuxt-link>
+                        <nuxt-link to="/photography/" class="level-item has-text-white" v-on:click.native="navClose">Photography</nuxt-link>
                         <nuxt-link to="/blog/" class="level-item has-text-white" v-on:click.native="navClose">Blog</nuxt-link>
                         <nuxt-link to="/music/" class="level-item has-text-white" v-on:click.native="navClose">Music</nuxt-link>
                     </div>
@@ -71,7 +72,9 @@ nav {
         margin-bottom: 0;
     }
     .title {
-        font-size: 3em;
+        font-size: 2em;
+        position: relative;
+        top: 5px;
     }
     a {
         font-size: 1.5em; padding: 5px 20px;
@@ -83,17 +86,23 @@ nav {
             overflow: hidden;
             height: 0;
             transition: all 0.25s ease-in-out;
-            background: #242424;
+            background: #121212;
             width: 100vw;
             margin-left: -32px;
-            margin-top: 5px;
+            margin-top: 25px;
+            padding-top: 0;
+            box-sizing: border-box;
         }
         & .open {
+            padding-top: 10px;
             height: 100vh;
         }
         p {
             justify-content: left;
             margin-top: 11px;
+        }
+        .title {
+            top: 12px
         }
     }
 }

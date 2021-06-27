@@ -12,7 +12,7 @@
     />
 
     <!--Intro section -->
-    <section id="intro" class="text-section has-background-black has-text-white">
+    <slanted-section id="intro" class="text-section has-background-black has-text-white">
       <div>
         <div class="container is-fullhd">
           <div class="column">
@@ -34,7 +34,7 @@
           </div>
        </div>
       </div>
-    </section>
+    </slanted-section>
     <section id="posts-section">
       <div>
         <div class="container is-fluid">
@@ -92,17 +92,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  position: relative;
-  padding: 40px 0;
-  &.text-section {
-    padding: 80px 35px;
-  }
-  &.bg-black {
-    background-color: #010101;
-  }
-}
 #posts-section {
   background: white;
+}
+#intro {
+  padding-bottom: 150px;
 }
 </style>

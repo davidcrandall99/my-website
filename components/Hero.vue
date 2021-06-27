@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="hero">
+    <slanted-section id="hero">
       <div
         :style="
         `background-image:url(${backgroundImg}); 
@@ -28,7 +28,7 @@
             </div>
          </div>
         </div>
-    </div>
+    </slanted-section>
   </div>
 </template>
 
@@ -66,6 +66,8 @@ export default {
   background-repeat: no-repeat;
   background-color: black;
   position: relative;
+  margin-bottom: -100px;
+  z-index:1;
   p {
     max-width: 500px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);

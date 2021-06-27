@@ -1,0 +1,82 @@
+<template>
+<div>
+    <simple-hero title="Photography" />
+    <slanted-section>
+        <div class="container">
+            <div class="grid">
+                <div class="item" :key="index" v-for="set, index in photosets" :style="`background-image:url(${set.thumbnail})`">
+                    <nuxt-link class="link" :to="`/photography/gallery/${set.id}/`"></nuxt-link>
+                    <p>{{ set.title }}</p>
+                </div>
+            </div>
+        </div>
+    </slanted-section>
+</div>
+</template>
+
+<script>
+import SimpleHero from '~/components/SimpleHero.vue';
+    export default {
+  components: { SimpleHero },
+        data() {
+            return {
+                photosets: []
+            }
+        },
+        mounted() {
+            this.getPhotoSets();
+        },
+        methods: {
+            getPhotoSets() {
+                fetch('https://davidcrandall.com/api/getsets')
+                    .then(response => response.json())
+                    .then(data => { this.photosets = data })
+            }
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+    .grid {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        .item {
+            width: 25%;
+            height: 300px;
+            display: flex;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+            position: relative;
+            box-sizing: border-box;
+            padding: 20px;
+            overflow: hidden;
+            @media (max-width: 800px) {
+                width: 50%;
+            }
+            @media (max-width: 600px) {
+                width: 100%;
+            }
+            .link {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.2);
+                transition: all 0.5s ease;
+                &:hover {
+                    background-color: rgba(0,0,0,0.8)
+                }
+            }
+            p {
+                position:absolute;
+                color: white;
+                bottom: 20px;
+                left: 20px;
+                font-size: 2rem;
+            }
+        }
+    }
+</style>
