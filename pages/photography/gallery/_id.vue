@@ -51,19 +51,26 @@ export default {
         return data;
       });
   },
-  updated: function () {
-    this.mountAnimation()
-  }, 
+  mounted(){
+    this.$nextTick(() => {
+      var interval = setInterval(() => {
+      if (this.$fetchState.pending === false) {
+        this.mountAnimation()
+        clearInterval(interval)
+      }
+      }, 100);
+    })
+  },
   methods: {
     mountAnimation() {
       var ScrollTrigger = require("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
-
+      console.log('scrollTrigger')
       //animate photos in on scroll
       var photos = gsap.utils.toArray(".photo");
       photos.forEach((photo) => {
         var tl = gsap.timeline();
-        tl.restart();
+        tl.restart()
         tl.fromTo(
           photo,
           {
@@ -73,7 +80,7 @@ export default {
             opacity: 1,
             scrollTrigger: {
               trigger: photo,
-              start: "top 600px",
+              start: "top 670px",
               end: "top 100px",
               scrub: true,
             },
