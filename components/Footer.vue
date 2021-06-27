@@ -1,22 +1,32 @@
 <template>
-    <div id="footer">
-        <!-- <form method="POST" action="https://davidcrandall.com/api/contactform/"> -->
+    <div id="footer" class="has-background-black has-text-white">
+
+        <div id="footnav">
+            <p class="title has-text-white">Navigate</p>
+            <p><nuxt-link to="/">Home ></nuxt-link></p>
+            <p><nuxt-link to="/photography/">Photography ></nuxt-link></p>
+            <p><nuxt-link to="/music/">Music ></nuxt-link></p>
+            <p><nuxt-link to="/blog/">Blog ></nuxt-link></p>
+        </div>
+
         <div id="form">
+            <p class="title has-text-white">Contact</p>
             <div v-if="!complete" id="fields">
-                <input v-model="form.email" name="email" type="email" required placeholder="email" />
-                <input v-model="form.subject" name="subject" type="text" required placeholder="what do you want to talk about?" />
-                <textarea v-model="form.message" name="message" required placeholder="message" />
-                <button id="submit" v-on:click="submit()">Submit</button>
+                <input class="input" v-model="form.email" name="email" type="email" required placeholder="email" />
+                <input class="input" v-model="form.subject" name="subject" type="text" required placeholder="what do you want to talk about?" />
+                <textarea class="textarea" v-model="form.message" name="message" required placeholder="message" />
+                <button class="button is-primary" id="submit" v-on:click="submit()">Submit</button>
             </div>
             <div v-else id="thankyoumessage">
                 <p>Thank you for submitting your message!</p>
-                <p>Your email: {{ form.email }}<br>
-                    Your subject: {{ form.subject }}
+                <p>I'll try to reach out as soon as I can!</p>
+                <p>Below is a receipt of your message:</p>
+                <p class="receipt">Your email: {{ form.email }}<br>
+                    Your subject: {{ form.subject }}<br/>
                     Your message: {{ form.message }}
                 </p>
             </div>
         </div>
-        <!-- </form> -->
     </div>
 </template>
 
@@ -55,5 +65,48 @@
 <style lang="scss" scoped>
  #footer {
      min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content:space-around;
+     flex-wrap: wrap;
+     box-sizing: border-box;
+     padding: 20px 80px;
+     font-size: 1.5em;
+     #footnav {
+         width: 65%;
+         min-width: 200px;
+         a {
+             color: #fff;
+         }
+     }
+     #form {
+         input, textarea {
+             margin-bottom: 20px;
+         }
+         .button {
+             width: 100%;
+         }
+         @media(min-width: 700px) {
+            width: 35%;
+         }
+     }
+     #thankyoumessage {
+         p {
+             font-size: .7em;
+             &.receipt {
+                 margin-top: 20px;
+             }
+         }
+     }
+     @media (max-width: 1167px) {
+         .title {
+             font-size: 2em;
+         }
+     }
+     @media (max-width: 830px) {
+         .title {
+             font-size: 1.7em;
+         }
+     }
  }
 </style>
