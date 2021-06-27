@@ -1,5 +1,6 @@
 import FMMode from "frontmatter-markdown-loader/mode";
 import path from "path";
+const fetch = require('node-fetch');
 // import manifestGenerator from './plugins/manifest';
 
 // //generate the blog post data before anything else
@@ -11,9 +12,19 @@ let urls = [];
 for (var i = 0; i in manifest; i++) {
   urls.push(manifest[i].uri);
 }
+console.log('captured blog urls')
+console.log('fetching photo galleries')
+//fetch the photosets to build uri's
+fetch('https://davidcrandall.com/api/getsets')
+    .then(response => response.json())
+    .then(data => { 
 
-
-console.log(urls)
+      data.forEach((item) =>{
+        var uri = `/photography/gallery/${item.id}/`
+        urls.push(uri)
+      })
+})
+console.log('galleries fetched. nuxt can begin doing its thing')
 
 //now the nuxt config can begin
 export default {
