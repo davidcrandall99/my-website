@@ -14,8 +14,19 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
 export default {
-    props: ['title','bgImage']
+    props: ['title','bgImage'],
+    mounted() {
+    let tl = gsap.timeline();
+    tl.from('.hero .columns *', {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      stagger: .25,
+      ease: "power3.out"
+    })
+  },
 };
 </script>
 
