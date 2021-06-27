@@ -6,7 +6,7 @@
             <div class="grid">
                 <div class="item" :key="index" v-for="set, index in photosets" :style="`background-image:url(${set.thumbnail})`">
                     <nuxt-link class="link" :to="`/photography/gallery/${set.id}/`"></nuxt-link>
-                    <p>{{ set.title }}</p>
+                    <nuxt-link class="text" :to="`/photography/gallery/${set.id}/`">{{ set.title }}</nuxt-link>
                 </div>
             </div>
         </div>
@@ -66,16 +66,18 @@ import SimpleHero from '~/components/SimpleHero.vue';
                 height: 100%;
                 background-color: rgba(0,0,0,0.2);
                 transition: all 0.5s ease;
-                &:hover {
-                    background-color: rgba(0,0,0,0.8)
-                }
             }
-            p {
+            .text {
                 position:absolute;
                 color: white;
                 bottom: 20px;
                 left: 20px;
                 font-size: 2rem;
+            }
+            &:hover {
+                .link {
+                    background-color: rgba(0,0,0,0.8)
+                }
             }
         }
     }
