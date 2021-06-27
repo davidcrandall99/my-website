@@ -69,7 +69,13 @@ export default {
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "manifest", href: "/manifest.json" },
     
+    ],
+    script: [
+      {
+        src: 'https://www.google.com/recaptcha/api.js?render=6LcXi14bAAAAAFuw_c4xQ6LbhKRcrYhvpxOaSDEE'
+      }
     ]
+
   },
   /*
    ** Customize the progress-bar color
@@ -100,8 +106,10 @@ export default {
       removeInlineStyles: false,
       origin: 'https://davidcrandall.com'
     }],
-    "@nuxtjs/redirect-module"
+    "@nuxtjs/redirect-module",
+    '@nuxt/http',
   ],
+
   redirect: [
       {
           from: '^.*(?<!\/|.jpg|.png|.svg)$',
