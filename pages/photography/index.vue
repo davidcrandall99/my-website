@@ -16,7 +16,31 @@
 
 <script>
 import SimpleHero from '~/components/SimpleHero.vue';
-    export default {
+export default {
+    head() {
+        return {
+            title: 'Photography by David Crandall',
+            script:[
+                { 
+                type: 'application/ld+json', 
+                json: {
+                "@context"  : "http://schema.org",
+                "@type"     : "Person",
+                "name"      : "David Crandall",
+                "mainEntityOfPage": `https://davidcrandall.com`
+                } 
+            },{ 
+                type: 'application/ld+json', 
+                json: {
+                "@context"  : "http://schema.org",
+                "@type"     : "Brand",
+                "name"      : "David Crandall Photography",
+                "mainEntityOfPage": `https://davidcrandall.com`
+                } 
+            }
+            ]
+        }
+    },
   components: { SimpleHero },
         data() {
             return {

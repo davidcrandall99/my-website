@@ -36,6 +36,47 @@ import SlantedSection from "~/components/SlantedSection.vue";
 import { gsap } from "gsap";
 export default {
   components: { SimpleHero, SlantedSection },
+  head() {
+      return {
+          title: this.photos.title + ' | Photography by David Crandall',
+          meta: [
+            {
+              hid: 'description',
+              name: 'description',
+              content: `Photo Album: ${this.photos.title}. All photography and editing by David Crandall.`
+            },
+            {
+              hid: 'og:description',
+              property: 'og:description',
+              content: `Photo Album: ${this.photos.title}. All photography and editing by David Crandall.`
+            },
+            {
+              hid: 'og:title',
+              property: 'og:title',
+              content: this.photos.title
+            }
+          ],
+          script:[
+              { 
+              type: 'application/ld+json', 
+              json: {
+              "@context"  : "http://schema.org",
+              "@type"     : "Person",
+              "name"      : "David Crandall",
+              "mainEntityOfPage": `https://davidcrandall.com`
+              } 
+          },{ 
+              type: 'application/ld+json', 
+              json: {
+              "@context"  : "http://schema.org",
+              "@type"     : "Brand",
+              "name"      : "David Crandall Photography",
+              "mainEntityOfPage": `https://davidcrandall.com`
+              } 
+          }
+          ]
+      }
+    },
   data() {
     return {
       id: this.$route.params.id,
