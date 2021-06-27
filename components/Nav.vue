@@ -72,7 +72,7 @@ nav {
         margin-bottom: 0;
     }
     .title {
-        font-size: 2em;
+        // font-size: 1em;
         position: relative;
         top: 5px;
     }
