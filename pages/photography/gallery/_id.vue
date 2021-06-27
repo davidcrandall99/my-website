@@ -6,7 +6,7 @@
     <slanted-section>
       <div class="gallery">
         <div class="photo" :key="index" v-for="(photo, index) in photos.photos">
-          <img :src="photo.med" loading="lazy" :alt="photo.title" />
+          <img :src="photo.med" :alt="photo.title" />
         </div>
       </div>
     </slanted-section>
