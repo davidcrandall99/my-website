@@ -100,7 +100,8 @@ export default {
       removeInlineStyles: false,
       origin: 'https://davidcrandall.com'
     }],
-    "@nuxtjs/redirect-module"
+    "@nuxtjs/redirect-module",
+    '@nuxt/http'
   ],
   redirect: [
       {
