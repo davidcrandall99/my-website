@@ -67,6 +67,13 @@ export default {
   head() {
     return {
       title: 'David Crandall | Official Website and Blog',
+      meta: [
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "https://davidcrandall.com/images/side-pic.webp",
+        },
+      ],
       script: [
        { 
         type: 'application/ld+json', 
