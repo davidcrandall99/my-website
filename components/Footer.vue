@@ -155,6 +155,13 @@ export default {
     }
   }
   @media (max-width: 830px) {
+    padding: 40px 40px;
+    #footnav {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,0.4)
+    }
     .title {
       font-size: 1.7em;
     }
