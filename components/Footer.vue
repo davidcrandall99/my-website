@@ -70,14 +70,13 @@ export default {
   },
   methods: {
 	 getToken: async function(e) {
-
-		 var assign = (n) => { 
+		 var assign = async (n) => { 
 			 this.form.token = n;
-			 this.submit();
+       this.submit()
 		 }
 		
 		await grecaptcha.ready(async function() {
-		var token = grecaptcha.execute('6LcXi14bAAAAAFuw_c4xQ6LbhKRcrYhvpxOaSDEE', { action: 'submit'
+		  await grecaptcha.execute('6LcXi14bAAAAAFuw_c4xQ6LbhKRcrYhvpxOaSDEE', { action: 'submit'
 			}).then(function(token) {
 				assign(token);
 			});    	
@@ -89,14 +88,15 @@ export default {
 		if(this.form.email === "" || this.form.subject === "" || !this.form.message === "") {
 			this.error = "Please complete all the fields"
 		} else {
-       	 	await this.$http
+       	  await this.$http
 				.post("https://davidcrandall.com/api/contactform/", this.form, {
 					emulateJSON: true,
 				})
 				.then((response) => {
-					return response.json();
+					return response.json()
 				})
 				.then((data) => {
+          console.log(data)
 					if (data.status === "success") {
 						this.complete = true;
 						this.error = false;
