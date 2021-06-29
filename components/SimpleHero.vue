@@ -1,7 +1,7 @@
 <template>
   <div>
-    <slanted-section class="hero has-background-dark has-text-white" :style="`background-image: url(${ bgImage });`">
-      <div class="overlay"></div>
+    <slanted-section :class="`hero ${isLight ? 'has-background-light' : 'has-background-dark has-text-white' }`" :style="`background-image: url(${ bgImage });`">
+      <div v-if="!isLight" class="overlay"></div>
       
       <div v-if="title" class="container is-flex">
         <div class="columns is-mobile is-vcentered is-centered is-full">
@@ -20,11 +20,11 @@
 <script>
 import { gsap } from "gsap";
 export default {
-    props: ['title','bgImage'],
+    props: ['title','bgImage', 'isLight'],
     mounted() {
       let tl = gsap.timeline();
   
-      tl.from('.hero .columns *, .hero h1', {
+      tl.from('.hero .columns *, .hero h1, .hero p', {
         y: 60,
         opacity: 0,
         duration: 1,
@@ -53,6 +53,8 @@ export default {
   }
 }
 .o {
+  width: 100%;
+  height: 100%;
   z-index: 2;
 }
 </style>
