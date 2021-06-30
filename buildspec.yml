@@ -13,6 +13,7 @@ phases:
      - ls
   build:
     commands:
+      - npm run manifest
       - ls ./assets
       - npm run generate
       - ls
