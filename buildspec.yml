@@ -10,10 +10,11 @@ phases:
      - npm cache clear --force
      - npm install --fix
      - npm run manifest
-    #  - npm test
+     - ls
   build:
     commands:
       - npm run generate
+      - ls
 artifacts:
   files:
     -  '**/*'
