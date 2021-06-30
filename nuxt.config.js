@@ -1,10 +1,10 @@
 import FMMode from "frontmatter-markdown-loader/mode";
 import path from "path";
 const fetch = require('node-fetch');
-// import manifestGenerator from './plugins/manifest';
+import manifestGenerator from './plugins/manifest';
 
 // //generate the blog post data before anything else
-// manifestGenerator();
+manifestGenerator();
 
 //Once the data is available, generate the array of static routes we'll want in our build, dynanically
 import { manifest } from "./assets/manifest.js";
