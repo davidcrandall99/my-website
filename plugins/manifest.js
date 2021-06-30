@@ -26,7 +26,14 @@ let manifestGenerator = () => {
       await shell.cd(__dirname);
       console.info('Moving images to Nuxt static directory');
       await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');
-      await shell.cd('/../')
+
+      console.log('Moving back to the main directory')
+      await shell.cd(__dirname + '/../')
+
+      console.log('THESE are the files to show we are back in the main directory');
+      await shell.exec('ls');
+
+
       return;
     } catch (e) {
       console.error(e);
