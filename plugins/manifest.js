@@ -134,6 +134,8 @@ let manifestGenerator = () => {
       return;
     });
 };
+
+console.log(__dirname)
 // writeManifest();
 
 module.exports = manifestGenerator;
