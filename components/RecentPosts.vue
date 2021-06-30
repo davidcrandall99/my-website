@@ -29,7 +29,9 @@ export default {
       manifest: manifest
     };
   }, beforeMount() {
-    this.manifest.pop(this.manifest.length)
+    if(this.manifest.length === 10) {
+      this.manifest.pop(this.manifest.length)
+    }
   }
 };
 </script>
