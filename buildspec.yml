@@ -13,6 +13,7 @@ phases:
      - ls
   build:
     commands:
+      - ls ./assets
       - npm run generate
       - ls
 artifacts:
