@@ -6,7 +6,7 @@ const shell = require("shelljs");
 const postPath = "posts";
 
 
-let writeManifest = () => {
+let manifestGenerator = () => {
   //get the posts from github
   let gitPosts = async () => {
     try {
@@ -101,7 +101,7 @@ let writeManifest = () => {
       var lists = new Array;
 
       //split the data into multiple lists in an array, so we can write each list to its own JSON file
-      for(i in data) {
+      for(var i=0; i in data; i++) {
         if (i % 9 === 0) {
           listPosition++;
           lists.push([listPosition]);
@@ -134,6 +134,6 @@ let writeManifest = () => {
       return;
     });
 };
-writeManifest();
+// writeManifest();
 
-module.exports = writeManifest;
+module.exports = manifestGenerator;

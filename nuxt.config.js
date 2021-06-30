@@ -23,7 +23,7 @@ fetch('https://davidcrandall.com/api/getsets')
         var uri = `/photography/gallery/${item.id}/`
         urls.push(uri)
       })
-})
+});
 console.log('galleries fetched. nuxt can begin doing its thing')
 
 //now the nuxt config can begin
