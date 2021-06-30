@@ -45,12 +45,6 @@
         <RecentPosts />
       </div>
     </section>
-
-    <section id="tech" class="has-background-dark text-light text-section">
-
-        <TechLogos />
-
-    </section>
   </div>
 </template>
 

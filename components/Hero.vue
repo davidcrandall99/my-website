@@ -11,7 +11,7 @@
         id="bg"
       ></div>
       <div class="cover"></div>
-      <div class="content container">
+
           <div class="columns is-vcentered is-mobile">
             <div class="column is-full">
               <h1 :if="title" v-html="title"></h1>
@@ -27,7 +27,6 @@
                 >{{cta}}</nuxt-link>
             </div>
          </div>
-        </div>
     </slanted-section>
   </div>
 </template>
@@ -60,7 +59,7 @@ export default {
   height: 100vh;
   width: 100vw;
   background: black;
-  padding: 20px;
+  padding: 40px;
   background-size: cover;
   background-position: right top;
   background-repeat: no-repeat;
@@ -90,12 +89,14 @@ export default {
     z-index:0;
   }
   h1 {
-    text-transform: lowercase;
     color: white;
     letter-spacing: 0.5px;
     max-width: 50%;
     flex: none;
     margin-bottom: 10px;
+    @media (max-width: 500px) {
+      max-width: 100%;
+    }
   }
   p {
     color: rgba(255, 255, 255, 0.8);
