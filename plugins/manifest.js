@@ -28,8 +28,8 @@ let manifestGenerator = () => {
   };
 
   //get the posts from the posts directory
-  let getPosts = () => {
-    return new Promise((resolve, reject) => {
+  let getPosts = async () => {
+    return await new Promise((resolve, reject) => {
       fs.readdir(__dirname + "/../posts/posts/", (err, data) => {
         if (err) {
           return reject(err);
@@ -40,8 +40,8 @@ let manifestGenerator = () => {
   };
 
   //read the contents of a markdown file
-  let getcontent = filename => {
-    return new Promise((resolve, reject) => {
+  let getcontent = async filename => {
+    return await new Promise((resolve, reject) => {
       fs.readFile(
         __dirname + "/../posts/posts/" + filename,
         "utf8",
@@ -95,7 +95,7 @@ let manifestGenerator = () => {
         //return the full object
         return newData;
       })
-      .then(data => {
+      .then(async data => {
       
       var listPosition = -1;
       var lists = new Array;
@@ -114,7 +114,7 @@ let manifestGenerator = () => {
       
       //write out the JSON files
       for (i in lists) {
-        fs.writeFile(
+        await fs.writeFile(
           __dirname + `/../assets/manifest-${i}.js`,
           `export const manifest = ${JSON.stringify(lists[i])}`,
           err => {
@@ -129,13 +129,17 @@ let manifestGenerator = () => {
       return data;
     });
   })
+  .then(async () => {
+    await fs.readdir(__dirname + `/../assets/`,(e,m) => {
+      console.log(e,m)
+    });
+  })
     .catch(e => {
       console.log(e);
       return;
     });
 };
-
+manifestGenerator()
 console.log(__dirname)
-// writeManifest();
 
 module.exports = manifestGenerator;
