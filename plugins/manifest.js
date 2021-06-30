@@ -13,7 +13,11 @@ let manifestGenerator = () => {
       let pass = escape(process.env.PASS);
       let user = escape(process.env.USER);
       console.info('Fetching posts from repo');
+
+
+      console.log('moving from script directory to base directory');
       await shell.cd(__dirname + "/../");
+      console.log(`cloning from https://${user}:${pass}@${process.env.REPO}`)
       await shell.exec(`git clone https://${user}:${pass}@${process.env.REPO}`);
       console.log('these are the current files in the base folder')
       await shell.exec('ls');
@@ -22,7 +26,7 @@ let manifestGenerator = () => {
       await shell.cd(__dirname);
       console.info('Moving images to Nuxt static directory');
       await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');
-
+      await shell.cd('/../')
       return;
     } catch (e) {
       console.error(e);
