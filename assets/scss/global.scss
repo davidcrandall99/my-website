@@ -1,35 +1,51 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+@import url('//fonts.googleapis.com/css?family=Bungee Hairline&subset=latin');
 /* Import Bulma Utilities */
 $grey-darker:  hsl(0, 0%, 10%) !default;
 $grey-dark: hsl(0, 0%, 20%) !default;
 $blue: #0051a8;
 $primary: $blue;
+$size1: 10vmin;
+$size2: 7vmin;
+$size3: 3vmin;
+$body-line-height: 1.5;
+
 @import '~bulma/bulma';
 
 html, body {
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Nixie One', sans-serif;
+    font-size: 2vmin;
+    @media screen and (max-width: 600px) {
+        font-size: 4vmin;
+    }
 }
 html {
+    overflow-x: hidden;
+}
+body {
+    width: 100vw;
     overflow-x: hidden;
 }
 #bottom {
     margin-bottom: -80px;
 }
-h1, h2, h3, h4, .title, nav a, .button {
+p {
+    margin-bottom: 2vw;
+}
+h1, h2, h3, h4, h1.title, nav a, .button {
     font-family: 'Nixie One', sans-serif;
-    font-weight: bold;
+    // font-weight: bold;
     text-transform: uppercase;
+    line-height: $body-line-height * .7;
+    font-weight: bold;
 }
 h1, .title, title, .title.is-1 {
-    font-size: 3em;
-    @media screen and (max-width: 600px) {
-        font-size: 2.25em;
-    }
+    font-size: $size1;
+    font-weight: bold;
 }
-h2 {
-    font-size: 2.2em;
+h2, .content h2 {
+    font-size: $size2;
 }
 h3 {
     font-size: 1.6em;
@@ -38,8 +54,10 @@ h4 {
     font-size: 1.4em;
 }
 a.button {
-    font-size: 1.5em;
     text-decoration: none;
+    &.is-primary {
+        font-size: 2vh;
+    }
 }
 .bg-dark {
     background: $grey-darker;
