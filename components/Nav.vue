@@ -8,6 +8,7 @@
                     </div>
                     <div :class="['level-right', 'link-container', isOpen ? 'open' : 'closed']">
                         <nuxt-link to="/" class="level-item has-text-white" v-on:click.native="navClose">Home</nuxt-link>
+                        <nuxt-link to="/web/" class="level-item has-text-white" v-on:click.native="navClose">Web Services</nuxt-link>
                         <nuxt-link to="/photography/" class="level-item has-text-white" v-on:click.native="navClose">Photography</nuxt-link>
                         <nuxt-link to="/blog/" class="level-item has-text-white" v-on:click.native="navClose">Blog</nuxt-link>
                         <nuxt-link to="/music/" class="level-item has-text-white" v-on:click.native="navClose">Music</nuxt-link>

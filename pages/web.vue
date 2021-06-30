@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SimpleHero id="hero" isLight="true">
+        <SimpleHero id="hero">
             <div class="heroContent">
                 <div>
                     <h1>Web</h1>
@@ -15,9 +15,9 @@
                 </div>
             </div>
         </SimpleHero>
-        <section>
+        <section class="has-background-black has-text-white">
             <div class="content">
-                <h2>Web development</h2>
+                <h2 class="has-text-white">Web development</h2>
                 <p>I am an engineer with a keen interest in web development and frontend engineering, from SPA's, to landing pages, to microsites, and more.</p>
                 <p>I like building things <b>people</b> can engage with, enjoy, and find useful. This is the mantra behind every project.
                 </p>
@@ -34,16 +34,16 @@
                 UI design makes the <b>experience</b> work for <b>people.</b></p>
             </div>
         </section>
-        <section>
+        <SlantedSection class="has-background-dark has-text-white section">
             <div class="content">
-                <h2>Cloud &amp; Infrastructure</h2>
+                <h2 class="has-text-white">Cloud &amp; Infrastructure</h2>
                 <p>Every website has the specific need to continuously optimize and iterate. I assess each project at hand to design and implement solid, simple infrastructure that not only meets those needs, but gives room to scale for the future.</p>
             </div>
-        </section>
-        <SlantedSection id="skills" class="has-background-dark has-text-white">
+        </SlantedSection>
+        <SlantedSection id="skills" class="section">
             <div class="content">
                 <div class="has-text-centered">
-                    <h2 class="title is-1 has-text-white">Tools of the trade</h2>
+                    <h2 class="title is-1">Tools of the trade</h2>
                     <p>My toolbelt has infinite slots. <br/>Below are some of the things I use today;<br/> I'm always learning and adding to my skillset.</p>
                 </div>
                 <div id="skillList">
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </SlantedSection>
-        <section id="worktogether">
+        <section id="worktogether" class="has-background-black has-text-white">
             <div>
                 <h2>Let's work together</h2>
                 <div class="cols">
@@ -98,6 +98,9 @@
 </script>
 
 <style lang="scss" scoped>
+    #hero {
+        margin-bottom: -100px
+    }
     .heroContent {
         display: flex;
         align-items: center;
@@ -151,6 +154,10 @@
             }
         }
     }
+    section, .section {
+        min-height: 100vh;
+        align-items: center;
+    }
     section {
         display: flex;
         .content {
@@ -182,8 +189,9 @@
             }
         }
         &#worktogether {
+            margin-bottom: -40px;
             > div {
-                padding: 20px;
+                padding: 40px;
             }
             .cols {
                 h3 {
