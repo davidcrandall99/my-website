@@ -15,11 +15,12 @@ let manifestGenerator = () => {
       console.info('Fetching posts from repo');
       await shell.cd(__dirname + "/../");
       await shell.exec(`git clone https://${user}:${pass}@${process.env.REPO}`);
+      console.log('these are the current files in the base folder')
+      await shell.exec('ls');
 
+      console.log('moving back to plugins folder');
+      await shell.cd(__dirname);
       console.info('Moving images to Nuxt static directory');
-      await shell.mkdir(__dirname + '/../static/images/posts/');
-      await shell.mkdir(__dirname + '/../posts/');
-      await shell.mkdir(__dirname + '/../posts/images/');
       await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');
 
       return;
