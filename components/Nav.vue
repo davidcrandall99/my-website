@@ -26,24 +26,52 @@ import Hamburger from '~/components/Hamburger'
         components: {
             Hamburger
         },
+        data() {
+            return {
+                isOpen: false,
+                size: "mobile"
+            }
+
+        },
         mounted() {
             gsap.from('.navbar', {
                 y: -100,
                 duration: 1,
                 ease: "power3.out",
-                delay: 1
+                delay: 1,
             });
-        },
-        data() {
-            return {
-                isOpen: false
+            this.resizer();
+            if(this.size === 'desktop') {
+                this.animateIn()
             }
-
+            window.addEventListener('resize', this.resizer)
         },
         methods: {
+            resizer: function () {
+                if(window.innerWidth > 768) {
+                    this.size = 'desktop';
+                }
+                else {
+                    this.size = 'mobile';
+                }
+            },
             navToggle: function() {
                 this.isOpen = !this.isOpen;
                 if(this.isOpen) {
+                    this.animateIn();
+                } else {
+                    this.animateOut();
+                }
+            },
+            navClose: function() {
+                if(this.size === 'mobile') {
+                this.animateOut(process.client, this.isOpen)
+                    .then(() => { this.isOpen = false; })
+                    .then(() => { this.animateIn() })
+                }
+            },
+            animateIn: function () {
+                if(process.client) {
                     gsap.fromTo('.link-container a', {
                         opacity: 0,
                         x: -50
@@ -55,19 +83,20 @@ import Hamburger from '~/components/Hamburger'
                     });
                 }
             },
-            navClose: function() {
-                var animateOut = async () => {
-                    await gsap.fromTo('.link-container a', {
-                        opacity: 1,
-                        x: 0
-                    }, {
-                        opacity: 0,
-                        x: -50,
-                        delay: .5,
-                        stagger: .1,
-                    });
+            animateOut: async function() {
+                if (process.client === true && this.isOpen === true)  {
+                    if (window.innerWidth < 769) {
+                        await gsap.fromTo('.link-container a', {
+                            opacity: 1,
+                            x: 0
+                        }, {
+                            opacity: 0,
+                            x: -50,
+                            delay: .5,
+                            stagger: .1,
+                        });
+                    }
                 }
-                animateOut().then(() => { this.isOpen = false; })
             }
         }
     }
@@ -110,6 +139,7 @@ nav {
         &:hover {
             letter-spacing: 2px;
         }
+        
     }
     .logo-container {
         min-width: 320px;
@@ -124,6 +154,9 @@ nav {
         display: flex;
         align-self: right;
         justify-content: right;
+        a.nuxt-link-active.nuxt-link-exact-active {
+            color: rgb(89, 185, 202) !important; //this is exclusively for the nav
+        }
     }
     @media screen and (max-width: 768px) {
         .link-container {
