@@ -18,6 +18,8 @@ let manifestGenerator = () => {
 
       console.info('Moving images to Nuxt static directory');
       await shell.mkdir(__dirname + '/../static/images/posts/');
+      await shell.mkdir(__dirname + '/../posts/');
+      await shell.mkdir(__dirname + '/../posts/images/');
       await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');
 
       return;
@@ -127,6 +129,8 @@ let manifestGenerator = () => {
 
       //return the un-truncated data for sitemap
       return data;
+    }).catch(e => {
+      console.error(e)
     });
   })
   .then(async () => {
