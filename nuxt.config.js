@@ -7,7 +7,7 @@ import manifestGenerator from './plugins/manifest';
 manifestGenerator();
 
 //Once the data is available, generate the array of static routes we'll want in our build, dynanically
-import { manifest } from "@/assets/manifest.js";
+import { manifest } from "./assets/manifest.js";
 let urls = [];
 for (var i = 0; i in manifest; i++) {
   urls.push(manifest[i].uri);
