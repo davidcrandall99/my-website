@@ -28,6 +28,8 @@ export default {
     return {
       manifest: manifest
     };
+  }, beforeMount() {
+    this.manifest.pop(this.manifest.length)
   }
 };
 </script>
