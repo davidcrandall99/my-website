@@ -156,6 +156,5 @@ let manifestGenerator = () => {
     });
 };
 manifestGenerator()
-console.log(__dirname)
 
 module.exports = manifestGenerator;
