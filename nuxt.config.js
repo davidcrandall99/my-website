@@ -9,20 +9,31 @@ let urls = [];
 for (var i = 0; i in manifest; i++) {
   urls.push(manifest[i].uri);
 }
-console.log('captured blog urls')
-console.log('fetching photo galleries')
-//fetch the photosets to build uri's
-fetch('https://davidcrandall.com/api/getsets')
-    .then(response => response.json())
-    .then(data => { 
+console.log('captured blog urls');
+console.log('fetching photo galleries');
 
-      data.forEach((item) =>{
+
+
+//fetch the photosets to build uri's
+(function () { 
+  fetch('https://davidcrandall.com/api/getsets')
+    .then(async response => await response.json())
+    .then(async data => { 
+
+      await data.forEach((item) =>{
         var uri = `/photography/gallery/${item.id}/`
         urls.push(uri)
       })
-});
-console.log('galleries fetched. nuxt can begin doing its thing')
+      console.log(urls)
+      return urls;
+  });
+  return urls
+})();
 
+
+
+console.log('galleries fetched. nuxt can begin doing its thing')
+console.log(urls)
 //now the nuxt config can begin
 export default {
   ssr: true,

@@ -43,7 +43,9 @@ export default {
         data = require(`~/assets/manifest-${this.manifestNum}.js`);
         data = data.manifest;
         for(var i in data) {
-          this.posts.push(data[i]);
+          if(data[i].title) {
+            this.posts.push(data[i]);
+          }
         }
 
       } 
