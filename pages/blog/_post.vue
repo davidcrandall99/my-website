@@ -20,14 +20,12 @@
       </div>
     </slanted-section>
     <section id="post">
-      <div>
-        <div class="container">
+      <div class="container">
           <div class="columns is-centered">
-            <div class="column is-8">
+            <div class="colum">
               <component :is="selectedArticle" />
             </div>
           </div>
-        </div>
       </div>
     </section>
     <slanted-section id="comments">
@@ -208,6 +206,9 @@ export default {
 };
 </script>
 <style lang="scss">
+#post {
+  padding: 40px;
+}
 .markdown-body {
   padding: 35px;
 }
@@ -229,6 +230,7 @@ export default {
   }
   img {
     max-width: 100%;
+    max-height: 100vh;
     margin: 10px 0;
   }
   padding-bottom: 40px;

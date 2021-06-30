@@ -1,6 +1,6 @@
 <template>
   <div id="posts">
-    <div class="container is-fullhd">
+
       <div class="columns is-multiline is-vcentered is-centered">
         <div class="column is-4-desktop is-4-tablet" :key="index" v-for="(item, index) in manifest">
         <nuxt-link :to="item.uri + '/'" class="text-dark" :aria-label="item.title">
@@ -16,7 +16,7 @@
         </nuxt-link>
         </div>
       </div>
-   </div>
+
   </div>
 </template>
 
