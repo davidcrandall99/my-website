@@ -9,6 +9,7 @@
                     </div>
                     <div :class="['right', 'link-container', isOpen ? 'open' : 'closed']">
                         <nuxt-link to="/" class="has-text-white" v-on:click.native="navClose">Home</nuxt-link>
+                        <nuxt-link to="/web/" class="has-text-white" v-on:click.native="navClose">Web Dev + Design</nuxt-link>
                         <nuxt-link to="/photography/" class="has-text-white" v-on:click.native="navClose">Photography</nuxt-link>
                         <nuxt-link to="/blog/" class="has-text-white" v-on:click.native="navClose">Blog</nuxt-link>
                         <nuxt-link to="/music/" class="has-text-white" v-on:click.native="navClose">Music</nuxt-link>
