@@ -92,8 +92,68 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+
     export default {
-        
+        mounted() {
+            this.mountAnimation();
+            this.heroTimeline();
+        },
+        methods: {
+            mountAnimation: function() {
+                if(process.client){
+                    //client side only
+                    var ScrollTrigger = require('gsap/ScrollTrigger');
+                    gsap.registerPlugin(ScrollTrigger)
+                }
+            },
+            heroTimeline: function() {
+                var tl = gsap.timeline();
+                tl.to('#desktop', {
+                    x: 800,
+                    y: -100,
+                    rotation: '-20',
+                    opacity: 1,
+                    delay: 0.5,
+                    duration: 1
+                });
+                tl.fromTo("#tablet2", {
+                    right: -1000, 
+                    top: '100%'                   
+                }, {
+                    top: '70%',
+                    right: -10,
+                    rotation: 45,
+                    delay: -0.7,
+                    opacity: 1,
+                    duration: 1, 
+                });
+                tl.fromTo("#phone", {
+                    left: '-100%',
+                    bottom: '-100%',
+                    rotation: 0
+                },
+                {
+                    left: '-1.7%',
+                    bottom: '-20%',
+                    duration: 1,
+                    delay: -0.7,
+                    rotation: 20
+                });
+                tl.fromTo("#laptop", {
+                    top: '-500px',
+                    right: '-500px',
+                    rotation: 0
+                }, {
+                    top: '-10%',
+                    right: 0,
+                    duration: 1,
+                    rotation: 45,
+                    delay: -0.7
+                }
+                )
+            }
+        },
     }
 </script>
 
@@ -127,29 +187,29 @@
             #tablet2 {
                 opacity: 1;
                 bottom: -10%;
-                right: -200px;
+                right: -800px;
                 height: 50%;
                 transform: rotate(-25deg);
             }
             #phone {
                 opacity: 1;
                 width: 300px;
-                left: -5%;
-                bottom: -15%;
+                left: -100px;
+                bottom: -100%;
                 transform: rotate(30deg);
             }
             #laptop {
                 opacity: 1;
-                right: -50px;
+                right: -500px;
                 top: 0px;
                 transform: rotate(35deg);
-                height: 300px;
+                height: 40vh;
             }
             #desktop {
                 opacity: 1;
                 width: 45%;
-                transform: rotate(-45deg);
-                left: -100px;
+                transform: rotate(-95deg);
+                left: -900px;
                 top: 10px;
             }
         }
