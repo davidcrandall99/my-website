@@ -12,7 +12,6 @@
     height: 50px;
     position: absolute;
     right: 20px;
-    top: 15px;
     .line {
         width: 50px;
         height: 5px;

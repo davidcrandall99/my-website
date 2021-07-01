@@ -8,7 +8,7 @@
     "dev": "node plugins/manifest.js && nuxt",
     "build": "node plugins/manifest && nuxt build",
     "start": "nuxt start",
-    "generate": "node plugins/manifest.js && nuxt generate",
+    "generate": "nuxt generate",
     "manifest": "node plugins/manifest.js",
     "test": "jest"
   },
@@ -21,6 +21,7 @@
     "@nuxtjs/recaptcha": "^1.0.4",
     "@nuxtjs/redirect-module": "^0.3.1",
     "@nuxtjs/sitemap": "^2.0.1",
+    "dotenv": "^8.2.0",
     "frontmatter-markdown-loader": "^3.1.0",
     "gray-matter": "^4.0.2",
     "gsap": "^3.7.0",
@@ -29,8 +30,7 @@
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "shelljs": "^0.8.4",
-    "vue-disqus": "^3.0.5",
-    "vue-particles": "^1.0.9"
+    "vue-disqus": "^3.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

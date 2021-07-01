@@ -6,19 +6,33 @@ const shell = require("shelljs");
 const postPath = "posts";
 
 
-let writeManifest = () => {
+let manifestGenerator = () => {
   //get the posts from github
   let gitPosts = async () => {
     try {
       let pass = escape(process.env.PASS);
       let user = escape(process.env.USER);
       console.info('Fetching posts from repo');
-      await shell.cd(__dirname + "/../");
-      await shell.exec(`git clone https://${user}:${pass}@${process.env.REPO}`);
 
+
+      console.log('moving from script directory to base directory');
+      await shell.cd(__dirname + "/../");
+      console.log(`cloning from https://${user}:${pass}@${process.env.REPO}`)
+      await shell.exec(`git clone https://${user}:${pass}@${process.env.REPO}`);
+      console.log('these are the current files in the base folder')
+      await shell.exec('ls');
+
+      console.log('moving back to plugins folder');
+      await shell.cd(__dirname);
       console.info('Moving images to Nuxt static directory');
-      await shell.mkdir(__dirname + '/../static/images/posts/');
       await shell.cp(__dirname + '/../posts/images/*', __dirname + '/../static/images/posts/');
+
+      console.log('Moving back to the main directory')
+      await shell.cd(__dirname + '/../')
+
+      console.log('THESE are the files to show we are back in the main directory');
+      await shell.exec('ls');
+
 
       return;
     } catch (e) {
@@ -28,8 +42,8 @@ let writeManifest = () => {
   };
 
   //get the posts from the posts directory
-  let getPosts = () => {
-    return new Promise((resolve, reject) => {
+  let getPosts = async () => {
+    return await new Promise((resolve, reject) => {
       fs.readdir(__dirname + "/../posts/posts/", (err, data) => {
         if (err) {
           return reject(err);
@@ -40,8 +54,8 @@ let writeManifest = () => {
   };
 
   //read the contents of a markdown file
-  let getcontent = filename => {
-    return new Promise((resolve, reject) => {
+  let getcontent = async filename => {
+    return await new Promise((resolve, reject) => {
       fs.readFile(
         __dirname + "/../posts/posts/" + filename,
         "utf8",
@@ -95,13 +109,13 @@ let writeManifest = () => {
         //return the full object
         return newData;
       })
-      .then(data => {
+      .then(async data => {
       
       var listPosition = -1;
       var lists = new Array;
 
       //split the data into multiple lists in an array, so we can write each list to its own JSON file
-      for(i in data) {
+      for(var i=0; i in data; i++) {
         if (i % 9 === 0) {
           listPosition++;
           lists.push([listPosition]);
@@ -114,7 +128,7 @@ let writeManifest = () => {
       
       //write out the JSON files
       for (i in lists) {
-        fs.writeFile(
+        await fs.writeFile(
           __dirname + `/../assets/manifest-${i}.js`,
           `export const manifest = ${JSON.stringify(lists[i])}`,
           err => {
@@ -127,6 +141,13 @@ let writeManifest = () => {
 
       //return the un-truncated data for sitemap
       return data;
+    }).catch(e => {
+      console.error(e)
+    });
+  })
+  .then(async () => {
+    await fs.readdir(__dirname + `/../assets/`,(e,m) => {
+      console.log(e,m)
     });
   })
     .catch(e => {
@@ -134,6 +155,6 @@ let writeManifest = () => {
       return;
     });
 };
-writeManifest();
+manifestGenerator()
 
-module.exports = writeManifest;
+module.exports = manifestGenerator;

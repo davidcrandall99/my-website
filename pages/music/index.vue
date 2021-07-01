@@ -47,24 +47,23 @@
       </div>
       <br />
       <div class="images">
-        <a href="https://www.youtube.com/c/DavidCrandallIsHere" target="_blank"
-          ><img src="/images/music/youtube.png" />
-          <p>Follow me on YouTube</p></a
-        >
+        <div><a href="https://www.youtube.com/c/DavidCrandallIsHere" target="_blank"
+          ><img alt="follow me on youtube" src="/images/music/youtube.png" /></a
+        ></div>
         <a
           href="https://open.spotify.com/artist/3XC3atB6PjVMCNFMdLy3Nt"
           target="_blank"
-          ><img src="/images/music/spotify.png"
+          ><img alt="follow me on spotify" src="/images/music/spotify.png"
         /></a>
         <a
           href="https://music.apple.com/us/album/composed/1540133822"
           target="_blank"
-          ><img src="/images/music/itunes.svg"
+          ><img alt="check out my music on itunes" src="/images/music/itunes.svg"
         /></a>
         <a
           href="https://music.youtube.com/playlist?list=OLAK5uy_k5Z4FNVPFTmnHwZIsJPXpW1Jch5JT1G3k"
           target="_blank"
-          ><img src="/images/music/googleplay.png"
+          ><img alt="check me out on youtube music" src="/images/music/googleplay.png"
         /></a>
       </div>
     </div>
@@ -171,6 +170,9 @@ export default {
   padding: 20px;
   .intro {
     text-align: center;
+    display: block;
+  }
+  div {
     display: block;
   }
   .images {
