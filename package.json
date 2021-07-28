@@ -22,7 +22,7 @@
     "@nuxtjs/redirect-module": "^0.3.1",
     "@nuxtjs/sitemap": "^2.0.1",
     "dotenv": "^8.2.0",
-    "frontmatter-markdown-loader": "^3.1.0",
+    "frontmatter-markdown-loader": "^3.6.3",
     "gray-matter": "^4.0.2",
     "gsap": "^3.7.0",
     "moment": "^2.29.1",
