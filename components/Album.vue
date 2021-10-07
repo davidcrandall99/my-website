@@ -2,6 +2,7 @@
   <div>
     <div class="titlecard">
       <p>{{ albumData.title }}</p>
+      <img v-if="albumData.albumArt" :src="albumData.albumArt" :alt="albumData.title" />
       <p>{{ albumData.released }}</p>
     </div>
     <ol>
