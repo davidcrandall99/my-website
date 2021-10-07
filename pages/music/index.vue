@@ -14,6 +14,20 @@
       :bgImage="item.bgImage"
     />
     
+    <div id="albums">
+      <div v-for="album, index in albums" :key="index">
+        <div class="titlecard">
+          <p>{{ album.title }}</p>
+        </div>
+        <ol>
+          <li v-for="song, index in album.songsCollection.items" :key="index">
+            <span class="songtitle">{{ song.title }}</span>
+            <span class="duration">{{ song.duration }}</span>
+          </li>
+        </ol>
+
+      </div>
+    </div>
 
     <div id="workedwith">
       <div class="container">
@@ -72,10 +86,41 @@
 
 <script>
 const showcase = require('~/assets/music-showcase.json');
+import gql from 'graphql-tag';
+
+//the graphql query to contentful for all albums
+var query = gql`{
+      albumCollection {
+        items{
+          title
+          spotifyUrl
+          tidalUrl
+          deezerUrl
+          youtubeMusicUrl
+          appleMusicUrl
+          albumArt
+          songsCollection{
+            items{
+              title
+              duration
+            }
+          }
+        }
+      }
+    }`
+  
 export default {
+  async fetch() {
+   this.$apollo.query({query}).then(data => {
+      this.albums = data.data.albumCollection.items;
+    })
+
+  },
+  fetchOnServer: false,
   data() {
     return {
-      showcase: showcase
+      showcase: showcase,
+      albums: [],
     }
   },
   head() {
