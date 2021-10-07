@@ -15,18 +15,7 @@
     />
     
     <div id="albums">
-      <div v-for="album, index in albums" :key="index">
-        <div class="titlecard">
-          <p>{{ album.title }}</p>
-        </div>
-        <ol>
-          <li v-for="song, index in album.songsCollection.items" :key="index">
-            <span class="songtitle">{{ song.title }}</span>
-            <span class="duration">{{ song.duration }}</span>
-          </li>
-        </ol>
-
-      </div>
+      <Album v-for="album, index in albums" :key="index" :albumData="album" />
     </div>
 
     <div id="workedwith">
@@ -87,6 +76,7 @@
 <script>
 const showcase = require('~/assets/music-showcase.json');
 import gql from 'graphql-tag';
+import Album from '~/components/Album.vue';
 
 //the graphql query to contentful for all albums
 var query = gql`{
@@ -99,6 +89,7 @@ var query = gql`{
           youtubeMusicUrl
           appleMusicUrl
           albumArt
+          released
           songsCollection{
             items{
               title
@@ -111,7 +102,8 @@ var query = gql`{
   
 export default {
   async fetch() {
-   this.$apollo.query({query}).then(data => {
+   
+    this.$apollo.query({query}).then(data => {
       this.albums = data.data.albumCollection.items;
     })
 
