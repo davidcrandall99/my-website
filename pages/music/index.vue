@@ -80,7 +80,7 @@ import Album from '~/components/Album.vue';
 
 //the graphql query to contentful for all albums
 var query = gql`{
-      albumCollection {
+      albumCollection(order: released_DESC) {
         items{
           title
           spotifyUrl
