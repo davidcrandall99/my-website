@@ -116,8 +116,21 @@ export default {
     }],
     "@nuxtjs/redirect-module",
     '@nuxt/http',
+    '@nuxtjs/apollo'
   ],
-
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.CONTENTFUL_ENDPOINT,
+        authenticationType: 'Bearer',
+        httpLinkOptions: {
+          headers: {
+            'Authorization': 'Bearer ' + process.env.CONTENTFULKEY
+          }
+        }
+      }
+    }
+  },
   redirect: [
       {
           from: '^.*(?<!\/|.jpg|.png|.svg)$',
@@ -171,5 +184,8 @@ export default {
         return route
       })
     }
+  },
+  env: {
+    CONTENTFULKEY: process.env.CONTENTFULKEY
   }
 };
