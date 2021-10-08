@@ -15,7 +15,7 @@
     />
     
     <div id="albums">
-      <Album v-for="album, index in albums" :key="index" :albumData="album" />
+      <AlbumList />
     </div>
 
     <div id="workedwith">
@@ -74,45 +74,12 @@
 </template>
 
 <script>
-const showcase = require('~/assets/music-showcase.json');
-import gql from 'graphql-tag';
-import Album from '~/components/Album.vue';
-
-//the graphql query to contentful for all albums
-var query = gql`{
-      albumCollection(order: released_DESC) {
-        items{
-          title
-          spotifyUrl
-          tidalUrl
-          deezerUrl
-          youtubeMusicUrl
-          appleMusicUrl
-          albumArt
-          released
-          songsCollection{
-            items{
-              title
-              duration
-            }
-          }
-        }
-      }
-    }`
-  
+const showcase = require('~/assets/music-showcase.json');  
 export default {
-  async fetch() {
-   
-    this.$apollo.query({query}).then(data => {
-      this.albums = data.data.albumCollection.items;
-    })
-
-  },
   fetchOnServer: false,
   data() {
     return {
       showcase: showcase,
-      albums: [],
     }
   },
   head() {
