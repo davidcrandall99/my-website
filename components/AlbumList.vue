@@ -14,10 +14,9 @@ var query = gql`
       items {
         title
         spotifyUrl
-        tidalUrl
-        deezerUrl
         youtubeMusicUrl
         appleMusicUrl
+        pandoraUrl
         albumArt
         released
         songsCollection {
@@ -51,8 +50,10 @@ export default {
         display: flex;
         flex-direction: row;
         align-items: stretch;
+        flex-wrap: wrap;
+        width: 100vw;
         .album {
-            flex: 1;
+            flex: 0 0 25%;
         }
     }
 </style>
