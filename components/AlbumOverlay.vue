@@ -1,6 +1,6 @@
 <template>
   <div id="overlay" class="has-background-dark">
-    <div v-if="closeMethod" class="closebtn" v-on:click="closeMethod"></div>
+    <div v-if="closeMethod" class="closebtn" v-on:click="closeMethod"><p>CLOSE</p></div>
     <div
       class="bgimg"
       :style="`background-image: url('${albumData.albumArt}')`"
@@ -66,9 +66,22 @@ export default {
       position: absolute;
       right: 0;
       top: 0;
-      height: 50px;
-      width: 50px;
+      height: 70px;
+      width: 70px;
       cursor: pointer;
+      color: white;
+      display: flex;
+      align-items: center;
+      p {
+        font-size: .8rem;
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        font-weight: bold;
+      }
+      &:hover p {
+          text-decoration: underline;
+      }
     }
     .bgimg {
       filter: blur(30px);
