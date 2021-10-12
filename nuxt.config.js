@@ -15,8 +15,8 @@ console.log('fetching photo galleries');
 
 
 //fetch the photosets to build uri's
-(function () { 
-  fetch('https://davidcrandall.com/api/getsets')
+(async function () { 
+  await fetch('https://davidcrandall.com/api/getsets')
     .then(async response => await response.json())
     .then(async data => { 
 
