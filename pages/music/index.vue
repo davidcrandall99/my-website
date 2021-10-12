@@ -14,6 +14,16 @@
       :bgImage="item.bgImage"
     />
     
+    <div id="releases" class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h2 class="full-width">Releases</h2>
+        </div>
+      </div>
+    </div>
+    <div id="albums">
+      <AlbumList />
+    </div>
 
     <div id="workedwith">
       <div class="container">
@@ -71,11 +81,12 @@
 </template>
 
 <script>
-const showcase = require('~/assets/music-showcase.json');
+const showcase = require('~/assets/music-showcase.json');  
 export default {
+  fetchOnServer: false,
   data() {
     return {
-      showcase: showcase
+      showcase: showcase,
     }
   },
   head() {
@@ -138,7 +149,10 @@ export default {
   padding: 20px;
   box-sizing: border-box;
 }
-
+#releases h2 {
+  text-align: center;
+  width: 100%;
+}
 #workedwith {
   padding: 40px 0;
   h1 {

@@ -23,11 +23,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: TOKEN="%PASS%",USER="%USER%",REPO="%REPO%" npm run build --if-present
+    - run: TOKEN="%PASS%",USER="%USER%",REPO="%REPO%",CONTENTFULKEY="%CONTENTFULKEY%",CONTENTFUL_ENDPOINT="%CONTENTFUL_ENDPOINT%" npm run build --if-present
       env:
         PASS: ${{ secrets.TOKEN }}
         USER: ${{ secrets.USER }}
         REPO: ${{ secrets.REPO }}
+        CONTENTFULKEY: ${{ secrets.CONTENTFULKEY }}
+        CONTENTFUL_ENDPOINT: ${{ secrets.CONTENTFUL_ENDPOINT }}
     - run: npm test
       env:
         CI: true
