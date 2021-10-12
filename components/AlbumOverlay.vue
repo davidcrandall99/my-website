@@ -1,6 +1,6 @@
 <template>
   <div id="overlay" class="has-background-dark">
-    <div class="closebtn" v-on:click="closeMethod"></div>
+    <div v-if="closeMethod" class="closebtn" v-on:click="closeMethod"></div>
     <div
       class="bgimg"
       :style="`background-image: url('${albumData.albumArt}')`"
