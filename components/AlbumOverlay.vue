@@ -1,5 +1,5 @@
 <template>
-  <div id="overlay" class="has-background-dark">
+  <div id="overlay" class="has-background-dark albumoverlay">
     <div v-if="closeMethod" class="closebtn" v-on:click="closeMethod"><p>CLOSE</p></div>
     <div
       class="bgimg"
@@ -45,8 +45,17 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
 export default {
-    props: ["albumData", "closeMethod"]
+    props: ["albumData", "closeMethod"],
+    mounted() {
+      gsap.from('.albumoverlay', {
+        duration: 0.5,
+        ease: "power3.out",
+        y: -100,
+        opacity: 0,
+      })
+    },
 };
 </script>
 
