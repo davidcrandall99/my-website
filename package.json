@@ -30,7 +30,7 @@
     "nuxt": "^2.15.8",
     "sass": "^1.42.0",
     "sass-loader": "^10.1.1",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "vue-disqus": "^3.0.5"
   },
   "devDependencies": {
