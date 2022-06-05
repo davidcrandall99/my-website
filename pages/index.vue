@@ -13,7 +13,7 @@
         <div class="container is-fullhd">
           <div class="column">
             <h2 class="title has-text-white">Photography</h2>
-            <p>I am a photography located in the San Jose Bay Area. I do all sorts of photography, <br/> from themed shoots, cosplay, model sets, to events.</p>
+            <p>I am a photographer located in the San Jose Bay Area. I do all sorts of photography, <br/> from themed shoots, cosplay, model sets, to events.</p>
             <p>Check out some of my work below!</p>
           </div>
         <photo-album-list />
